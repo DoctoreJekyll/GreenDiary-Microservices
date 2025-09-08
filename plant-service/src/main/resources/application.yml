@@ -1,0 +1,23 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: plant-service
+
+  datasource:
+    url: jdbc:h2:mem:plantsdb;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update   # en dev: crea/actualiza tablas
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+
+# H2 console (opcional: ver DB en navegador)
+spring.h2.console.enabled: true
+spring.h2.console.path: /h2-console
