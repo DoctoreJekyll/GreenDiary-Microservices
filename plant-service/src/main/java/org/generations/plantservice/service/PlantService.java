@@ -56,7 +56,7 @@ public class PlantService {
                 });
     }
 
-    private void deletePlant(Integer id) {
+    public void deletePlant(Integer id) {
         plantRepository.deleteById(id);
     }
 }

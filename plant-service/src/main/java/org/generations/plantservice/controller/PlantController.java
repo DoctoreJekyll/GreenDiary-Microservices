@@ -6,6 +6,7 @@ import org.generations.plantservice.service.PlantService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,12 +27,31 @@ public class PlantController {
 
     @GetMapping("/{id}")
     public ResponseEntity<PlantDTO> getPlantById(@PathVariable int id) {
-        Optional<PlantDTO> plantOptional = plantService.findById(id);
-        return ResponseEntity.ok(plantOptional.orElseThrow());
+        return plantService.findById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
+
 
     @PostMapping
     public ResponseEntity<PlantDTO> createPlant(@RequestBody PlantDTO plantDTO) {
-        return ResponseEntity.ok(plantService.createPlantDTO(plantDTO));
+        PlantDTO created = plantService.createPlantDTO(plantDTO);
+        return ResponseEntity
+                .created(URI.create("/api/plants/" + created.getId()))
+                .body(created);
+    }
+
+
+    @PutMapping("/{id}")
+    public ResponseEntity<PlantDTO> updatePlant(@PathVariable("id") int id, @RequestBody PlantDTO plantDTO) {
+        return plantService.updatePlantDTO(id, plantDTO)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletePlant(@PathVariable("id") int id) {
+        plantService.deletePlant(id);
+        return ResponseEntity.noContent().build();
     }
 }
