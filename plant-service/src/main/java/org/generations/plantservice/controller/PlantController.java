@@ -1,5 +1,6 @@
 package org.generations.plantservice.controller;
 
+import org.generations.commonlib.exception.ResourceNotFoundException;
 import org.generations.plantservice.dto.PlantDTO;
 import org.generations.plantservice.model.Plant;
 import org.generations.plantservice.service.PlantService;
@@ -29,7 +30,7 @@ public class PlantController {
     public ResponseEntity<PlantDTO> getPlantById(@PathVariable int id) {
         return plantService.findById(id)
                 .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+                .orElseThrow(() -> new ResourceNotFoundException("Plant not found " + id));
     }
 
 

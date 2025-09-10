@@ -4,11 +4,13 @@ server:
 spring:
   application:
     name: watering-service
+
   datasource:
     url: jdbc:h2:mem:wateringdb;DB_CLOSE_DELAY=-1;MODE=PostgreSQL
     driver-class-name: org.h2.Driver
     username: sa
     password:
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -16,8 +18,8 @@ spring:
     properties:
       hibernate.format_sql: true
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

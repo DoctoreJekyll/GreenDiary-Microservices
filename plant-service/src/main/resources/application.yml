@@ -21,3 +21,9 @@ spring:
 # H2 console (opcional: ver DB en navegador)
 spring.h2.console.enabled: true
 spring.h2.console.path: /h2-console
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
