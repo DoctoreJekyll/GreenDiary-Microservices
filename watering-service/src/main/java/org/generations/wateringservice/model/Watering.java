@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -20,6 +21,6 @@ public class Watering {
     private Integer id;
 
     private Integer plantId;
-    private Date wateringDate;
+    private LocalDateTime wateringDate;
     private String notes;
 }

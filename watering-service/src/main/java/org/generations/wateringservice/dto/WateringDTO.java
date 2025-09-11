@@ -2,6 +2,7 @@ package org.generations.wateringservice.dto;
 
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -12,8 +13,6 @@ import java.util.Date;
 public class WateringDTO {
     private Integer id;
     private Integer plantId;
-    private Date wateringDate;
+    private LocalDateTime wateringDate;
     private String notes;
-
-
 }

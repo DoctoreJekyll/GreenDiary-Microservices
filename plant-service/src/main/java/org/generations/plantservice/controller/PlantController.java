@@ -2,6 +2,7 @@ package org.generations.plantservice.controller;
 
 import org.generations.commonlib.exception.ResourceNotFoundException;
 import org.generations.plantservice.dto.PlantDTO;
+import org.generations.plantservice.dto.PlantWithWateringDTO;
 import org.generations.plantservice.model.Plant;
 import org.generations.plantservice.service.PlantService;
 import org.springframework.http.ResponseEntity;
@@ -21,13 +22,21 @@ public class PlantController {
         this.plantService = plantService;
     }
 
+    @GetMapping("/{id}/with-watering")
+    public PlantWithWateringDTO getPlantWithWatering(@PathVariable("id") int id) {
+        return plantService.getPlantWithLastWatering(id);
+    }
+
     @GetMapping
     public ResponseEntity<List<PlantDTO>> getAllPlants() {
         return ResponseEntity.ok(plantService.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PlantDTO> getPlantById(@PathVariable int id) {
+    public ResponseEntity<PlantDTO> getPlantById(@PathVariable("id") int id) {
+        PlantDTO plantDTO = plantService.findById(id).get();
+        System.out.println(plantDTO.toString());
+
         return plantService.findById(id)
                 .map(ResponseEntity::ok)
                 .orElseThrow(() -> new ResourceNotFoundException("Plant not found " + id));

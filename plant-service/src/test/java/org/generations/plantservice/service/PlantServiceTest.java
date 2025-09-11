@@ -19,12 +19,13 @@ class PlantServiceTest {
     private PlantRepository repo;
     private PlantMapper mapper;
     private PlantService service;
+    private WateringClient client;
 
     @BeforeEach
     void setUp() {
         repo = mock(PlantRepository.class);         // fake repo
         mapper = new PlantMapper();                 // mapper real
-        service = new PlantService(repo, mapper);   // service con repo fake + mapper real
+        service = new PlantService(repo, mapper, client);   // service con repo fake + mapper real
     }
 
     @Test

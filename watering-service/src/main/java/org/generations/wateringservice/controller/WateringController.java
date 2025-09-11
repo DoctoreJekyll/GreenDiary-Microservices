@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -16,6 +17,12 @@ public class WateringController {
     public WateringController(WateringService wateringService) {
         this.wateringService = wateringService;
     }
+
+    @GetMapping("/last/{plantId}")
+    public WateringDTO getLastWatering(@PathVariable("plantId") int plantId) {
+        return new WateringDTO(1, plantId, LocalDateTime.now(),"");
+    }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<WateringDTO> getWatering(@PathVariable("id") Integer id) {

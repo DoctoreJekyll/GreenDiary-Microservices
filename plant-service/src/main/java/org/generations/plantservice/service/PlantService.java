@@ -2,7 +2,10 @@ package org.generations.plantservice.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import org.generations.commonlib.exception.ResourceNotFoundException;
 import org.generations.plantservice.dto.PlantDTO;
+import org.generations.plantservice.dto.PlantWithWateringDTO;
+import org.generations.plantservice.dto.WateringDTO;
 import org.generations.plantservice.mapper.PlantMapper;
 import org.generations.plantservice.model.Plant;
 import org.generations.plantservice.repository.PlantRepository;
@@ -17,7 +20,15 @@ import java.util.stream.Collectors;
 public class PlantService {
     private final PlantRepository plantRepository;
     private final PlantMapper plantMapper;
+    private final WateringClient wateringClient;
 
+    public PlantWithWateringDTO getPlantWithLastWatering(int plantId){
+        PlantDTO plantDTO = plantMapper.toPlantDTO(plantRepository.findById(plantId)
+                .orElseThrow(() -> new ResourceNotFoundException("Plant not found with id: " +   plantId)));
+        WateringDTO wateringDTO = wateringClient.getWatering(plantId);
+
+        return new PlantWithWateringDTO(plantDTO,wateringDTO);
+    }
 
     public Optional<PlantDTO> findById(Integer id) {
         return plantRepository.findById(id)
