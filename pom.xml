@@ -18,6 +18,7 @@
         <module>common-lib</module>
         <module>discovery-service</module>
         <module>gateway-service</module>
+        <module>auth-service</module>
     </modules>
 
     <properties>

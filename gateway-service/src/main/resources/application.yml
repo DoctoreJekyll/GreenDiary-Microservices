@@ -1,39 +1,50 @@
 server:
-  port: 8080   # El gateway escucha en este puerto
+  port: 8080   #  El gateway expone TODO en este puerto.
+
 
 spring:
   application:
-    name: gateway-service
+    name: gateway-service   #  Nombre con el que el gateway se registra en Eureka.
 
   cloud:
     gateway:
-      routes:
-        - id: plant-service
-          uri: lb://plant-service
-          predicates:
-            - Path=/plants/**
+      routes:               #  Lista de rutas (reglas) para redirigir peticiones.
+        - id: plant-service # Nombre interno descriptivo para esta ruta.
+          uri: lb://plant-service  #  "lb://" = usa el load balancer de Eureka.
+          # Busca el servicio registrado como "plant-service".
+          predicates:              #  Condiciones para activar esta ruta.
+            - Path=/plants/**      # Si la URL que llega al gateway empieza por /plants/...
           filters:
             - RewritePath=/plants/(?<segment>.*), /api/plants/${segment}
+              #  Antes de mandar la petición al servicio real,
+              # reescribe la URL:
+            # /plants/5 → /api/plants/5 (que es como tu PlantController escucha).
 
-        - id: watering-service
+        - id: watering-service     # Igual, pero para el servicio de riego.
           uri: lb://watering-service
           predicates:
             - Path=/watering/**
           filters:
             - RewritePath=/watering/(?<segment>.*), /api/watering/${segment}
+            # /watering/10 → /api/watering/10
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-    register-with-eureka: true
-    fetch-registry: true
+        # Dirección del servidor Eureka.
+      # Aquí el gateway pregunta "¿Dónde está plant-service?"
+    register-with-eureka: true     # El gateway también se registra en Eureka (opcional, pero recomendado).
+    fetch-registry: true           # Hace lookup del registro de Eureka para descubrir a los demás servicios.
 
 management:
   endpoints:
     web:
       exposure:
         include: health,info,metrics,gateway
+          #  Habilita endpoints de Actuator útiles para monitoreo:
+        # /actuator/health, /actuator/info, /actuator/metrics, /actuator/gateway
   endpoint:
     gateway:
-      enabled: true
+      enabled: true                #  Activa específicamente el endpoint /actuator/gateway
+      # para ver qué rutas están activas en el gateway.
