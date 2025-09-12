@@ -4,35 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efdfe518-e4b6-453d-912c-b0710b1ef8be" name="Changes" comment="eureka server up">
-      <change afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/dto/PlantWithWateringDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/dto/WateringDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/WateringClient.java" afterDir="false" />
+    <list default="true" id="74df10e3-e711-41fc-9e48-7e7366669b60" name="Changes" comment="Gateway test">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/org/generations/gatewayservice/GatewayServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/test/java/org/generations/gatewayservice/GatewayServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovery-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plant-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/PlantServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/PlantServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/controller/PlantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/controller/PlantController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/PlantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/PlantService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant-service/src/test/java/org/generations/plantservice/service/PlantServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/test/java/org/generations/plantservice/service/PlantServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watering-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/controller/WateringController.java" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/controller/WateringController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/dto/WateringDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/dto/WateringDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/model/Watering.java" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/model/Watering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/WateringClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/WateringClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-        <option value="com.intellij.jpb.NewClass" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,13 +51,15 @@
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
 }</component>
-  <component name="ProjectId" id="32VywiLrlC0OkvNAtyTDpZfm0Ue" />
+  <component name="ProjectId" id="32YjFQjuG6vgpvS4olMc0P8fmm0" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.gateway-service [clean].executor": "Run",
+    "Maven.gateway-service [validate].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -72,10 +68,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.DiscoveryServiceApplication.executor": "Run",
+    "Spring Boot.GatewayServiceApplication.executor": "Run",
     "Spring Boot.PlantServiceApplication.executor": "Run",
     "Spring Boot.WateringServiceApplication.executor": "Run",
     "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -100,10 +96,23 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.DiscoveryServiceApplication">
+  <component name="RunManager" selected="Spring Boot.PlantServiceApplication">
     <configuration name="DiscoveryServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="discovery-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.generations.discoveryservice.DiscoveryServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="gateway-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.generations.gatewayservice.GatewayServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.generations.gatewayservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -130,6 +139,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.GatewayServiceApplication" />
         <item itemvalue="Spring Boot.PlantServiceApplication" />
       </list>
     </recent_temporary>
@@ -144,31 +154,21 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="efdfe518-e4b6-453d-912c-b0710b1ef8be" name="Changes" comment="" />
-      <created>1757520274443</created>
+      <changelist id="74df10e3-e711-41fc-9e48-7e7366669b60" name="Changes" comment="" />
+      <created>1757604296175</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1757520274443</updated>
-      <workItem from="1757520275655" duration="2940000" />
-      <workItem from="1757523678289" duration="1218000" />
-      <workItem from="1757580881829" duration="7414000" />
+      <updated>1757604296175</updated>
+      <workItem from="1757604297805" duration="4096000" />
+      <workItem from="1757667084391" duration="1158000" />
     </task>
-    <task id="LOCAL-00001" summary="eureka server up">
-      <option name="closed" value="true" />
-      <created>1757524804431</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1757524804431</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="eureka server up" />
-    <option name="LAST_COMMIT_MESSAGE" value="eureka server up" />
+    <MESSAGE value="Gateway test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gateway test" />
   </component>
 </project>

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name = "watering-service")
 public interface WateringClient {
 
+    //cuando alguien use esta interfaz, en realidad ve a hablar con el watering-service en Eureka
     @GetMapping("/api/watering/plants/{plantId}")
     WateringDTO getWatering(@PathVariable("plantId") int id);
 

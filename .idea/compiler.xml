@@ -10,6 +10,7 @@
         <module name="watering-service" />
         <module name="common-lib" />
         <module name="discovery-service" />
+        <module name="gateway-service" />
         <module name="plant-service" />
       </profile>
     </annotationProcessing>

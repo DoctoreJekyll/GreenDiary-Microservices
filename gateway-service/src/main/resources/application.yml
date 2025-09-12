@@ -1,0 +1,39 @@
+server:
+  port: 8080   # El gateway escucha en este puerto
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: plant-service
+          uri: lb://plant-service
+          predicates:
+            - Path=/plants/**
+          filters:
+            - RewritePath=/plants/(?<segment>.*), /api/plants/${segment}
+
+        - id: watering-service
+          uri: lb://watering-service
+          predicates:
+            - Path=/watering/**
+          filters:
+            - RewritePath=/watering/(?<segment>.*), /api/watering/${segment}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,gateway
+  endpoint:
+    gateway:
+      enabled: true

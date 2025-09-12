@@ -23,8 +23,12 @@ public class PlantService {
     private final WateringClient wateringClient;
 
     public PlantWithWateringDTO getPlantWithLastWatering(int plantId){
-        PlantDTO plantDTO = plantMapper.toPlantDTO(plantRepository.findById(plantId)
-                .orElseThrow(() -> new ResourceNotFoundException("Plant not found with id: " +   plantId)));
+
+        PlantDTO plantDTO = plantMapper
+                .toPlantDTO(plantRepository.findById(plantId)
+                .orElseThrow(
+                        () -> new ResourceNotFoundException("Plant not found with id: " +   plantId)));
+
         WateringDTO wateringDTO = wateringClient.getWatering(plantId);
 
         return new PlantWithWateringDTO(plantDTO,wateringDTO);
