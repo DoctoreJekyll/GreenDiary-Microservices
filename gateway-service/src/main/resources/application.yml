@@ -28,6 +28,14 @@ spring:
             - RewritePath=/watering/(?<segment>.*), /api/watering/${segment}
             # /watering/10 → /api/watering/10
 
+        - id: auth-service     # Igual, pero para el servicio de riego.
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**
+          filters:
+            - RewritePath=/auth/(?<segment>.*), /api/auth/${segment}
+            # /watering/10 → /api/watering/10
+
 eureka:
   client:
     service-url:
