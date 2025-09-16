@@ -15,7 +15,7 @@ spring:
           predicates:              #  Condiciones para activar esta ruta.
             - Path=/plants/**      # Si la URL que llega al gateway empieza por /plants/...
           filters:
-            - RewritePath=/plants/(?<segment>.*), /api/plants/${segment}
+            - RewritePath=/plants(?<segment>/?.*), /api/plants${segment}
               #  Antes de mandar la petición al servicio real,
               # reescribe la URL:
             # /plants/5 → /api/plants/5 (que es como tu PlantController escucha).

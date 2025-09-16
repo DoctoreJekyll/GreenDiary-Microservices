@@ -1,5 +1,7 @@
 package org.generations.authservice.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 @Getter
@@ -9,6 +11,8 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class LoginDTO {
+    @NotBlank
     String username;
+    @NotBlank
     String password;
 }

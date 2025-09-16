@@ -62,7 +62,6 @@ public class AuthController {
   }
 
 
-
   //ADMIN ACTIONS
   @GetMapping
   @PreAuthorize("hasRole('ADMIN')")
