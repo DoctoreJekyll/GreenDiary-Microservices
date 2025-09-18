@@ -22,4 +22,5 @@ public class Plant {
     private String notes;
 
     private String lastWatered;
+    private String ownerUsername;
 }

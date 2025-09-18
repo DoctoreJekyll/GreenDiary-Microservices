@@ -15,6 +15,7 @@ public class PlantMapper {
         plantDTO.setLocation(plant.getLocation());
         plantDTO.setNotes(plant.getNotes());
         plantDTO.setLastWatered(plant.getLastWatered());
+        plantDTO.setOwnerUsername(plant.getOwnerUsername());
         return plantDTO;
     }
 
@@ -26,6 +27,7 @@ public class PlantMapper {
         plant.setLocation(plantDTO.getLocation());
         plant.setNotes(plantDTO.getNotes());
         plant.setLastWatered(plantDTO.getLastWatered());
+
         return plant;
     }
 

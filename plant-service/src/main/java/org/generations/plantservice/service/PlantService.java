@@ -46,8 +46,16 @@ public class PlantService {
                 .collect(Collectors.toList());
     }
 
-    public PlantDTO createPlantDTO(PlantDTO plantDTO) {
+    public List<PlantDTO> findAllByOwner(String ownerUsername) {
+        return plantRepository.findByOwnerUsername(ownerUsername)
+                .stream()
+                .map(plantMapper::toPlantDTO)
+                .toList();
+    }
+
+    public PlantDTO createPlantDTO(PlantDTO plantDTO, String username) {
         Plant plant = plantMapper.toPlant(plantDTO);
+        plant.setOwnerUsername(username);
         Plant saved = plantRepository.save(plant);
         return plantMapper.toPlantDTO(saved);
     }

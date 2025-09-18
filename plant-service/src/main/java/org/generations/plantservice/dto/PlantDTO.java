@@ -16,6 +16,6 @@ public class PlantDTO {
     private String notes;
 
     private String lastWatered;
-
+    private String ownerUsername;
 
 }

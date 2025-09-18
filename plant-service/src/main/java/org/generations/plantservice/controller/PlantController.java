@@ -7,6 +7,8 @@ import org.generations.plantservice.model.Plant;
 import org.generations.plantservice.service.PlantService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -29,25 +31,42 @@ public class PlantController {
         return plantService.getPlantWithLastWatering(id);
     }
 
-    @PreAuthorize("hasAnyRole('USER','ADMIN')")
-    @GetMapping
+    @PreAuthorize("hasAnyRole('ADMIN')")
+    @GetMapping("/all")
     public ResponseEntity<List<PlantDTO>> getAllPlants() {
         return ResponseEntity.ok(plantService.findAll());
     }
 
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
     @GetMapping("/{id}")
-    public ResponseEntity<PlantDTO> getPlantById(@PathVariable("id") int id) {
-        return plantService.findById(id)
-                .map(ResponseEntity::ok)
+    public ResponseEntity<PlantDTO> getPlantById(@PathVariable("id") int id, @AuthenticationPrincipal Jwt jwt) {
+        String username = jwt.getSubject();
+        boolean isAdmin = jwt.getClaimAsStringList("roles").contains("ADMIN");
+
+        PlantDTO plantDTO = plantService.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Plant not found " + id));
+
+
+        if (!isAdmin && !plantDTO.getOwnerUsername().equals(username)) {
+            return ResponseEntity.status(403).build();
+        }
+
+        return ResponseEntity.ok(plantDTO);
+    }
+
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
+    @GetMapping
+    public ResponseEntity<List<PlantDTO>> getAllPlantsByUser(@AuthenticationPrincipal Jwt jwt) {
+        String username = jwt.getSubject();
+        return ResponseEntity.ok(plantService.findAllByOwner(username));
     }
 
 
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
     @PostMapping
-    public ResponseEntity<PlantDTO> createPlant(@RequestBody PlantDTO plantDTO) {
-        PlantDTO created = plantService.createPlantDTO(plantDTO);
+    public ResponseEntity<PlantDTO> createPlant(@RequestBody PlantDTO plantDTO, @AuthenticationPrincipal Jwt jwt) {
+        String username = jwt.getSubject();
+        PlantDTO created = plantService.createPlantDTO(plantDTO, username);
         return ResponseEntity
                 .created(URI.create("/api/plants/" + created.getId()))
                 .body(created);
@@ -56,7 +75,17 @@ public class PlantController {
 
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
     @PutMapping("/{id}")
-    public ResponseEntity<PlantDTO> updatePlant(@PathVariable("id") int id, @RequestBody PlantDTO plantDTO) {
+    public ResponseEntity<PlantDTO> updatePlant(@PathVariable("id") int id, @RequestBody PlantDTO plantDTO, @AuthenticationPrincipal Jwt jwt) {
+        String username = jwt.getSubject();
+        boolean isAdmin = jwt.getClaimAsStringList("roles").contains("ADMIN");
+
+        plantDTO = plantService.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Plant not found " + id));
+
+        if (!isAdmin && !plantDTO.getOwnerUsername().equals(username)) {
+            return ResponseEntity.status(403).build();
+        }
+
         return plantService.updatePlantDTO(id, plantDTO)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
@@ -64,7 +93,17 @@ public class PlantController {
 
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletePlant(@PathVariable("id") int id) {
+    public ResponseEntity<Void> deletePlant(@PathVariable("id") int id, @AuthenticationPrincipal Jwt jwt) {
+        String username = jwt.getSubject();
+        boolean isAdmin = jwt.getClaimAsStringList("roles").contains("ADMIN");
+
+        PlantDTO plantDTO = plantService.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Plant not found " + id));
+
+        if (!isAdmin && !plantDTO.getOwnerUsername().equals(username)) {
+            return ResponseEntity.status(403).build();
+        }
+
         plantService.deletePlant(id);
         return ResponseEntity.noContent().build();
     }
