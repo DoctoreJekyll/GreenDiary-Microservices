@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class WateringDTO {
+public class  WateringDTO {
     private int id;
     private int plantId;
     private LocalDateTime waterTime;

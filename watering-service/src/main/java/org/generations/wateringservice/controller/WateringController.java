@@ -18,9 +18,19 @@ public class WateringController {
         this.wateringService = wateringService;
     }
 
-    @GetMapping("/last/{plantId}")
+    @GetMapping("/plants/{plantId}")
     public WateringDTO getLastWatering(@PathVariable("plantId") int plantId) {
         return new WateringDTO(1, plantId, LocalDateTime.now(),"");
+    }
+
+    @PostMapping("/plants/{plantId}")
+    public ResponseEntity<WateringDTO> createWateringForPlant(
+            @PathVariable int plantId,
+            @RequestBody WateringDTO dto) {
+        dto.setPlantId(plantId);
+        WateringDTO wateringSaved = wateringService.save(dto);
+        return ResponseEntity.created(URI.create("/api/watering/" + wateringSaved.getId()))
+                .body(wateringSaved);
     }
 
 

@@ -9,8 +9,10 @@ import org.generations.plantservice.dto.WateringDTO;
 import org.generations.plantservice.mapper.PlantMapper;
 import org.generations.plantservice.model.Plant;
 import org.generations.plantservice.repository.PlantRepository;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -82,4 +84,25 @@ public class PlantService {
     public void deletePlant(Integer id) {
         plantRepository.deleteById(id);
     }
+
+    public WateringDTO addWateringToPlant(int plantId, WateringDTO wateringDTO, String username) {
+        // 1. Validar que la planta pertenece al usuario:
+        Plant plant = plantRepository.findById(plantId)
+                .orElseThrow(() -> new ResourceNotFoundException("Plant not found " + plantId));
+
+        if (!plant.getOwnerUsername().equals(username)) {
+            throw new AccessDeniedException("This plant does not belong to you");
+        }
+
+        // 2. Forzar plantId en el DTO
+        wateringDTO.setPlantId(plantId);
+
+        if (wateringDTO.getWaterTime() == null) {
+            wateringDTO.setWaterTime(LocalDateTime.now());
+        }
+
+        // 3. Llamar al watering-service
+        return wateringClient.createWatering(plantId, wateringDTO);
+    }
+
 }

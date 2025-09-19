@@ -3,6 +3,7 @@ package org.generations.plantservice.controller;
 import org.generations.commonlib.exception.ResourceNotFoundException;
 import org.generations.plantservice.dto.PlantDTO;
 import org.generations.plantservice.dto.PlantWithWateringDTO;
+import org.generations.plantservice.dto.WateringDTO;
 import org.generations.plantservice.model.Plant;
 import org.generations.plantservice.service.PlantService;
 import org.springframework.http.ResponseEntity;
@@ -28,8 +29,22 @@ public class PlantController {
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
     @GetMapping("/{id}/with-watering")
     public PlantWithWateringDTO getPlantWithWatering(@PathVariable("id") int id) {
-        return plantService.getPlantWithLastWatering(id);
+        System.out.println(">>> Entrando en getPlantWithWatering con id=" + id);
+        PlantWithWateringDTO result = plantService.getPlantWithLastWatering(id);
+        System.out.println(">>> Saliendo de getPlantWithWatering con resultado=" + result);
+        return result;
     }
+
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
+    @PostMapping("/{id}/watering")
+    public ResponseEntity<WateringDTO> addWateringToPlant(@PathVariable("id") int id,
+                                                          @RequestBody WateringDTO wateringDTO,
+                                                          @AuthenticationPrincipal Jwt jwt) {
+        String username = jwt.getSubject();
+        WateringDTO created = plantService.addWateringToPlant(id, wateringDTO, username);
+        return ResponseEntity.created(URI.create("/api/plants/" + id + "/watering")).body(created);
+    }
+
 
     @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping("/all")

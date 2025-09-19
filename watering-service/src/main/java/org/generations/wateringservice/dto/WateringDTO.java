@@ -15,6 +15,4 @@ public class WateringDTO {
     private Integer plantId;
     private LocalDateTime wateringDate;
     private String notes;
-
-    private String ownerUsername;
 }
