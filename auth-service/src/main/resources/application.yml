@@ -4,23 +4,23 @@ server:
 spring:
   application:
     name: auth-service
+
   datasource:
-    url: jdbc:h2:mem:authdb;DB_CLOSE_DELAY=-1
+    url: jdbc:postgresql://localhost:5435/authdb
     driver-class-name: org.h2.Driver
-    username: sa
-    password:
+    username: authuser
+    password: authpass
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+    properties:
+      hibernate.format_sql: true
+      dialect: org.hibernate.dialect.PostgreSQLDialect
 
 jwt:
   secret: ${JWT_SECRET:AjXVvMvzieSBc95uWqPOS8/1K2+K9GHiErd+dmwWQY8r+0n+YN7hIHCOXTliRK4x}
   expiration-ms: 86400000
-
-# H2 console (opcional: ver DB en navegador)
-spring.h2.console.enabled: true
-spring.h2.console.path: /h2-console
 
 
 eureka:

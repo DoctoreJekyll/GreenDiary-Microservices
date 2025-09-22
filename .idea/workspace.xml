@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="trying to connect watering with plant service">
-      <change afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/config/FeignClientConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/config/FeignConfig.java" afterDir="false" />
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="fix feign and conecction plant service to watering and add docker compose">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/org/generations/authservice/AuthServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/org/generations/authservice/AuthServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/PlantServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/PlantServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/controller/PlantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/controller/PlantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/dto/WateringDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/dto/WateringDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/PlantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/PlantService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/WateringClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/WateringClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plant-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/WateringServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/WateringServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/controller/WateringController.java" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/controller/WateringController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/dto/WateringDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/dto/WateringDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/mapper/WateringMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/mapper/WateringMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/service/WateringService.java" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/service/WateringService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/watering-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -201,7 +189,7 @@
       <workItem from="1758211266149" duration="3017000" />
       <workItem from="1758274127038" duration="10158000" />
       <workItem from="1758535207743" duration="10000000" />
-      <workItem from="1758553910058" duration="7085000" />
+      <workItem from="1758553910058" duration="8311000" />
     </task>
     <task id="LOCAL-00001" summary="auth-service">
       <option name="closed" value="true" />
@@ -243,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758292364454</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix feign and conecction plant service to watering and add docker compose">
+      <option name="closed" value="true" />
+      <created>1758563105139</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1758563105139</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +251,7 @@
     <MESSAGE value="Auth and plant with owner in plant service" />
     <MESSAGE value="sec in watering and owner dto" />
     <MESSAGE value="trying to connect watering with plant service" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to connect watering with plant service" />
+    <MESSAGE value="fix feign and conecction plant service to watering and add docker compose" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix feign and conecction plant service to watering and add docker compose" />
   </component>
 </project>

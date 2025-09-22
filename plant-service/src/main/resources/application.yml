@@ -1,9 +1,9 @@
-logging:
-  level:
-    root: DEBUG
-    org.springframework.cloud: DEBUG
-    feign: DEBUG
-    org.generations.plantservice.service: TRACE
+#logging:
+#  level:
+#    root: DEBUG
+#    org.springframework.cloud: DEBUG
+#    feign: DEBUG
+#    org.generations.plantservice.service: TRACE
 
 server:
   port: 8081
@@ -13,21 +13,17 @@ spring:
     name: plant-service
 
   datasource:
-    url: jdbc:h2:mem:plantsdb;DB_CLOSE_DELAY=-1
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
+    url: jdbc:postgresql://localhost:5433/plantdb
+    username: plantuser
+    password: plantpass
 
   jpa:
     hibernate:
-      ddl-auto: update   # en dev: crea/actualiza tablas
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate.format_sql: true
-
-# H2 console (opcional: ver DB en navegador)
-spring.h2.console.enabled: true
-spring.h2.console.path: /h2-console
+      dialect: org.hibernate.dialect.PostgreSQLDialect
 
 
 eureka:
