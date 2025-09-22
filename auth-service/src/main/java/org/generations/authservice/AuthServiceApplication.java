@@ -18,10 +18,10 @@ public class AuthServiceApplication {
     @Bean
     CommandLineRunner seed(UserRepository repo, PasswordEncoder encoder) {
         return args -> {
-            if (repo.findByUsername("admin").isEmpty()) {
+            if (repo.findByUsername("jose").isEmpty()) {
                 UserApp admin = UserApp.builder()
-                        .username("admin")
-                        .password(encoder.encode("adminpass"))
+                        .username("jose")
+                        .password(encoder.encode("admin"))
                         .roles(new java.util.HashSet<>(java.util.List.of("ROLE_ADMIN")))
                         .build();
                 repo.save(admin);

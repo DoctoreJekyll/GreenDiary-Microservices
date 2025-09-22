@@ -4,14 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="sec in watering and owner dto">
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="trying to connect watering with plant service">
+      <change afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/config/FeignClientConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/config/FeignConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/org/generations/authservice/AuthServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/org/generations/authservice/AuthServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/PlantServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/PlantServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/controller/PlantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/controller/PlantController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/dto/WateringDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/dto/WateringDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/PlantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/PlantService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/WateringClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/WateringClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plant-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/WateringServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/WateringServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/controller/WateringController.java" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/controller/WateringController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/dto/WateringDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/dto/WateringDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/mapper/WateringMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/mapper/WateringMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/service/WateringService.java" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/service/WateringService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watering-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,14 +85,22 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jarma\Desktop\plantas-micro\watering-service\src\main\resources" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -151,8 +168,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.PlantServiceApplication" />
-        <item itemvalue="Spring Boot.GatewayServiceApplication" />
         <item itemvalue="Spring Boot.AuthServiceApplication" />
+        <item itemvalue="Spring Boot.GatewayServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -182,7 +199,9 @@
       <workItem from="1758098151538" duration="8512000" />
       <workItem from="1758188652958" duration="6209000" />
       <workItem from="1758211266149" duration="3017000" />
-      <workItem from="1758274127038" duration="4905000" />
+      <workItem from="1758274127038" duration="10158000" />
+      <workItem from="1758535207743" duration="10000000" />
+      <workItem from="1758553910058" duration="7085000" />
     </task>
     <task id="LOCAL-00001" summary="auth-service">
       <option name="closed" value="true" />
@@ -216,7 +235,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758195078087</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="trying to connect watering with plant service">
+      <option name="closed" value="true" />
+      <created>1758292364454</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1758292364454</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +254,7 @@
     <MESSAGE value="auth token on plant service and gateway fix" />
     <MESSAGE value="Auth and plant with owner in plant service" />
     <MESSAGE value="sec in watering and owner dto" />
-    <option name="LAST_COMMIT_MESSAGE" value="sec in watering and owner dto" />
+    <MESSAGE value="trying to connect watering with plant service" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to connect watering with plant service" />
   </component>
 </project>

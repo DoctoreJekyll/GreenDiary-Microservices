@@ -1,0 +1,44 @@
+version: '3.9'
+services:
+  # Base de datos del plant-service
+  plant-db:
+    image: postgres:15
+    container_name: plant-db
+    environment:
+      POSTGRES_DB: plantdb
+      POSTGRES_USER: plantuser
+      POSTGRES_PASSWORD: plantpass
+    ports:
+      - "5433:5432"   # mapea puerto host 5433 → contenedor 5432
+    networks:
+      - plantnet
+
+  # Base de datos del watering-service
+  watering-db:
+    image: postgres:15
+    container_name: watering-db
+    environment:
+      POSTGRES_DB: wateringdb
+      POSTGRES_USER: wateringuser
+      POSTGRES_PASSWORD: wateringpass
+    ports:
+      - "5434:5432"
+    networks:
+      - plantnet
+
+  # Base de datos del auth-service
+  auth-db:
+    image: postgres:15
+    container_name: auth-db
+    environment:
+      POSTGRES_DB: authdb
+      POSTGRES_USER: authuser
+      POSTGRES_PASSWORD: authpass
+    ports:
+      - "5435:5432"
+    networks:
+      - plantnet
+
+networks:
+  plantnet:
+    driver: bridge

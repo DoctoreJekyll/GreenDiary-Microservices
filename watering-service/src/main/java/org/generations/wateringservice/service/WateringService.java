@@ -36,6 +36,7 @@ public class WateringService {
 
     public WateringDTO save(WateringDTO wateringDTO) {
         Watering watering = wateringMapper.fromWateringDTOtoWatering(wateringDTO);
+        watering.setOwnerUsername(wateringDTO.getOwnerUsername());
         Watering savedWatering = wateringRepository.save(watering);
         return wateringMapper.fromWateringToWateringDTO(savedWatering);
     }

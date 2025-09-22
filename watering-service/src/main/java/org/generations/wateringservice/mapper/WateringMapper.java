@@ -13,6 +13,7 @@ public class WateringMapper {
         wateringDTO.setPlantId(watering.getPlantId());
         wateringDTO.setWateringDate(watering.getWateringDate());
         wateringDTO.setNotes(watering.getNotes());
+        wateringDTO.setOwnerUsername(watering.getOwnerUsername());
 
         return wateringDTO;
     }
@@ -23,6 +24,7 @@ public class WateringMapper {
         watering.setPlantId(wateringDTO.getPlantId());
         watering.setWateringDate(wateringDTO.getWateringDate());
         watering.setNotes(wateringDTO.getNotes());
+        watering.setOwnerUsername(wateringDTO.getOwnerUsername());
 
         return watering;
     }

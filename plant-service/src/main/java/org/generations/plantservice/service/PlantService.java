@@ -2,6 +2,7 @@ package org.generations.plantservice.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.generations.commonlib.exception.ResourceNotFoundException;
 import org.generations.plantservice.dto.PlantDTO;
 import org.generations.plantservice.dto.PlantWithWateringDTO;
@@ -9,6 +10,7 @@ import org.generations.plantservice.dto.WateringDTO;
 import org.generations.plantservice.mapper.PlantMapper;
 import org.generations.plantservice.model.Plant;
 import org.generations.plantservice.repository.PlantRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Service;
 
@@ -19,21 +21,33 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class PlantService {
     private final PlantRepository plantRepository;
     private final PlantMapper plantMapper;
     private final WateringClient wateringClient;
 
-    public PlantWithWateringDTO getPlantWithLastWatering(int plantId){
+    public PlantWithWateringDTO getPlantWithLastWatering(int plantId) {
+        System.out.println(">>> Buscando planta " + plantId);
+        PlantDTO plantDTO = plantRepository.findById(plantId)
+                .map(plantMapper::toPlantDTO)
+                .orElseThrow(() -> new ResourceNotFoundException("Plant not found " + plantId));
 
-        PlantDTO plantDTO = plantMapper
-                .toPlantDTO(plantRepository.findById(plantId)
-                .orElseThrow(
-                        () -> new ResourceNotFoundException("Plant not found with id: " +   plantId)));
+        // Llama al client y verifica la respuesta
+        ResponseEntity<WateringDTO> response = wateringClient.getWatering(plantId);
+        if (!response.getStatusCode().is2xxSuccessful() || response.getBody() == null) {
+            // Maneja el caso de error (por ejemplo, planta no encontrada)
+            throw new ResourceNotFoundException("Watering data not found for plant " + plantId);
+        }
 
-        WateringDTO wateringDTO = wateringClient.getWatering(plantId);
+        WateringDTO wateringDTO = response.getBody();
+        log.info("Watering recibido desde watering-service: {}", wateringDTO);
 
-        return new PlantWithWateringDTO(plantDTO,wateringDTO);
+        PlantWithWateringDTO dto = new PlantWithWateringDTO();
+        dto.setPlantDTO(plantDTO);
+        dto.setWateringDTO(wateringDTO);
+        System.out.println(">>> Construido PlantWithWateringDTO: " + dto);
+        return dto;
     }
 
     public Optional<PlantDTO> findById(Integer id) {
@@ -85,6 +99,7 @@ public class PlantService {
         plantRepository.deleteById(id);
     }
 
+    // En tu archivo PlantService.java
     public WateringDTO addWateringToPlant(int plantId, WateringDTO wateringDTO, String username) {
         // 1. Validar que la planta pertenece al usuario:
         Plant plant = plantRepository.findById(plantId)
@@ -94,15 +109,16 @@ public class PlantService {
             throw new AccessDeniedException("This plant does not belong to you");
         }
 
-        // 2. Forzar plantId en el DTO
+        // 2. Forzar plantId y ownerUsername en el DTO
         wateringDTO.setPlantId(plantId);
+        wateringDTO.setOwnerUsername(username); // <- ¡Añade esta línea!
 
-        if (wateringDTO.getWaterTime() == null) {
-            wateringDTO.setWaterTime(LocalDateTime.now());
+        if (wateringDTO.getWateringDate() == null) {
+            wateringDTO.setWateringDate(LocalDateTime.now());
         }
 
-        // 3. Llamar al watering-service
-        return wateringClient.createWatering(plantId, wateringDTO);
+        ResponseEntity<WateringDTO> response = wateringClient.createWatering(plantId, wateringDTO);
+        return response.getBody();
     }
 
 }

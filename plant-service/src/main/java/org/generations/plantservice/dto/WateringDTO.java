@@ -13,5 +13,7 @@ import java.time.LocalDateTime;
 public class  WateringDTO {
     private int id;
     private int plantId;
-    private LocalDateTime waterTime;
+    private LocalDateTime wateringDate;
+    private String notes;
+    private String ownerUsername;
 }

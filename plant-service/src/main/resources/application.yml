@@ -1,3 +1,10 @@
+logging:
+  level:
+    root: DEBUG
+    org.springframework.cloud: DEBUG
+    feign: DEBUG
+    org.generations.plantservice.service: TRACE
+
 server:
   port: 8081
 

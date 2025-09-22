@@ -3,6 +3,8 @@ package org.generations.wateringservice.controller;
 import org.generations.wateringservice.dto.WateringDTO;
 import org.generations.wateringservice.service.WateringService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -19,15 +21,20 @@ public class WateringController {
     }
 
     @GetMapping("/plants/{plantId}")
-    public WateringDTO getLastWatering(@PathVariable("plantId") int plantId) {
-        return new WateringDTO(1, plantId, LocalDateTime.now(),"");
+    public ResponseEntity<WateringDTO> getLastWatering(@PathVariable("plantId") int plantId) {
+        return wateringService.findById(plantId)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping("/plants/{plantId}")
     public ResponseEntity<WateringDTO> createWateringForPlant(
-            @PathVariable int plantId,
-            @RequestBody WateringDTO dto) {
+            @PathVariable("plantId") int plantId,
+            @RequestBody WateringDTO dto,
+            @AuthenticationPrincipal Jwt jwt) { // <- ¡Añade esto!
         dto.setPlantId(plantId);
+        dto.setOwnerUsername(jwt.getSubject()); // <- ¡Añade esto para obtener el username!
+
         WateringDTO wateringSaved = wateringService.save(dto);
         return ResponseEntity.created(URI.create("/api/watering/" + wateringSaved.getId()))
                 .body(wateringSaved);
@@ -54,7 +61,7 @@ public class WateringController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<WateringDTO> updateWatering(@PathVariable int id, @RequestBody WateringDTO wateringDTO) {
+    public ResponseEntity<WateringDTO> updateWatering(@PathVariable("id") int id, @RequestBody WateringDTO wateringDTO) {
         return wateringService.update(id, wateringDTO)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());

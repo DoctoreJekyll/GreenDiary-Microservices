@@ -28,11 +28,12 @@ public class PlantController {
 
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
     @GetMapping("/{id}/with-watering")
-    public PlantWithWateringDTO getPlantWithWatering(@PathVariable("id") int id) {
+    public ResponseEntity<PlantWithWateringDTO> getPlantWithWatering(@PathVariable("id") int id) {
         System.out.println(">>> Entrando en getPlantWithWatering con id=" + id);
         PlantWithWateringDTO result = plantService.getPlantWithLastWatering(id);
+        System.out.println("Sale del result???");
         System.out.println(">>> Saliendo de getPlantWithWatering con resultado=" + result);
-        return result;
+        return ResponseEntity.ok(result);
     }
 
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
