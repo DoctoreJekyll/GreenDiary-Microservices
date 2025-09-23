@@ -15,18 +15,4 @@ public class AuthServiceApplication {
         SpringApplication.run(AuthServiceApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner seed(UserRepository repo, PasswordEncoder encoder) {
-        return args -> {
-            if (repo.findByUsername("jose").isEmpty()) {
-                UserApp admin = UserApp.builder()
-                        .username("jose")
-                        .password(encoder.encode("admin"))
-                        .roles(new java.util.HashSet<>(java.util.List.of("ROLE_ADMIN")))
-                        .build();
-                repo.save(admin);
-            }
-        };
-    }
-
 }

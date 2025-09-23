@@ -19,22 +19,4 @@ public class PlantServiceApplication {
         SpringApplication.run(PlantServiceApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner seed(PlantRepository repo) {
-        return args -> {
-            if (repo.findById(1).isEmpty()) {
-                Plant plant = Plant.builder()
-                        .name("Rosa")
-                        .species("Super rosa")
-                        .location("Salon")
-                        .notes("Notas")
-                        .lastWatered(LocalDateTime.now().toString())
-                        .ownerUsername("jose").build();
-
-                repo.save(plant);
-            }
-        };
-    }
-
-
 }

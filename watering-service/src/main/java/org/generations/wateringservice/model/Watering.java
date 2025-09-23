@@ -1,9 +1,6 @@
 package org.generations.wateringservice.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -15,6 +12,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Builder
+@Table(name = "waterings")
 public class Watering {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

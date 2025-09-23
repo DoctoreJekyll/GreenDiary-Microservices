@@ -21,6 +21,8 @@ public class Plant {
     private String location;
     private String notes;
 
+    @Column(name="last_watered")
     private String lastWatered;
+    @Column(name="owner_username")
     private String ownerUsername;
 }

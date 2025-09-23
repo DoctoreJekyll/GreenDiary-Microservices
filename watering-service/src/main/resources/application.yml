@@ -11,19 +11,25 @@ server:
 spring:
   application:
     name: watering-service
+  jpa:
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:data.sql
+
 
   datasource:
     url: jdbc:postgresql://localhost:5434/wateringdb
     username: wateringuser
     password: wateringpass
-
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate.format_sql: true
-      dialect: org.hibernate.dialect.PostgreSQLDialect
 
 
 eureka:

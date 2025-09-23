@@ -5,18 +5,24 @@ spring:
   application:
     name: auth-service
 
-  datasource:
-    url: jdbc:postgresql://localhost:5435/authdb
-    driver-class-name: org.h2.Driver
-    username: authuser
-    password: authpass
   jpa:
     hibernate:
       ddl-auto: update
+    defer-datasource-initialization: true
     show-sql: true
     properties:
       hibernate.format_sql: true
       dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:data.sql
+
+  datasource:
+    url: jdbc:postgresql://localhost:5435/authdb
+    username: authuser
+    password: authpass
 
 jwt:
   secret: ${JWT_SECRET:AjXVvMvzieSBc95uWqPOS8/1K2+K9GHiErd+dmwWQY8r+0n+YN7hIHCOXTliRK4x}

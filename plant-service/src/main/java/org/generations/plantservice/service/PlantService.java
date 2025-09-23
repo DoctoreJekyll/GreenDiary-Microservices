@@ -26,6 +26,7 @@ public class PlantService {
     private final PlantRepository plantRepository;
     private final PlantMapper plantMapper;
     private final WateringClient wateringClient;
+    private final PlantEventProducer plantEventProducer;
 
     public PlantWithWateringDTO getPlantWithLastWatering(int plantId) {
         System.out.println(">>> Buscando planta " + plantId);
@@ -73,6 +74,9 @@ public class PlantService {
         Plant plant = plantMapper.toPlant(plantDTO);
         plant.setOwnerUsername(username);
         Plant saved = plantRepository.save(plant);
+
+        plantEventProducer.sendPlantCreatedEvent("Nueva planta creada: " + saved.getName() + " por " + username);
+
         return plantMapper.toPlantDTO(saved);
     }
 
