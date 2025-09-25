@@ -1,6 +1,6 @@
 -- Usuario dummy para probar (solo si no existe)
 INSERT INTO users (username, password)
-SELECT 'jose', '{bcrypt}$2a$10$K0i63yZqJ3KOn5YQG2EJfuwEelSfxrZ5VpoVbO5LzNMQM3FlMB9MG'
+SELECT 'jose', '{bcrypt}$2a$12$tiCiXVY4tTQK1J83BW6G7Onj2o6KIuF5HCESumrcgO9JJsdYJm08q'
 WHERE NOT EXISTS (
     SELECT 1 FROM users WHERE username = 'jose'
 );

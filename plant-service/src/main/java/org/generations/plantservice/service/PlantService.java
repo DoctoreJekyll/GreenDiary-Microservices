@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -75,7 +76,12 @@ public class PlantService {
         plant.setOwnerUsername(username);
         Plant saved = plantRepository.save(plant);
 
-        plantEventProducer.sendPlantCreatedEvent("Nueva planta creada: " + saved.getName() + " por " + username);
+        plantEventProducer.sendPlantCreatedEvent(Map.of(
+                "eventType", "PLANT_CREATED",
+                "plantId", saved.getId(),
+                "name", saved.getName(),
+                "owner", saved.getOwnerUsername()
+        ));
 
         return plantMapper.toPlantDTO(saved);
     }
