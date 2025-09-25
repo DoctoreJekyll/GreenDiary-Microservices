@@ -64,6 +64,61 @@ services:
     networks:
       - plantnet
 
+  plant-service:
+    build: ./plant-service
+    container_name: plant-service
+    depends_on:
+      - plant-db
+      - kafka
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://plant-db:5432/plantdb
+      SPRING_DATASOURCE_USERNAME: plantuser
+      SPRING_DATASOURCE_PASSWORD: plantpass
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka
+    ports:
+      - "8081:8081"
+    networks:
+      - plantnet
+
+
+
+  watering-service:
+    build: ./watering-service
+    container_name: watering-service
+    depends_on:
+      - watering-db
+      - kafka
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://watering-db:5432/wateringdb
+      SPRING_DATASOURCE_USERNAME: wateringuser
+      SPRING_DATASOURCE_PASSWORD: wateringpass
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka
+    ports:
+      - "8082:8082"
+    networks:
+      - plantnet
+
+
+  auth-service:
+    build: ./auth-service
+    container_name: auth-service
+    depends_on:
+      - auth-db
+      - kafka
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://auth-db:5432/authdb
+      SPRING_DATASOURCE_USERNAME: authuser
+      SPRING_DATASOURCE_PASSWORD: authpass
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka
+    ports:
+      - "8082:8082"
+    networks:
+      - plantnet
+
+
 networks:
   plantnet:
     driver: bridge

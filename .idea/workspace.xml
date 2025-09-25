@@ -4,14 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="Kafka y postgre sql">
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="Kafa works on plant service">
+      <change afterPath="$PROJECT_DIR$/auth-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/discovery-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plant-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/dto/WateringEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/WateringEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watering-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/WateringEvent/WateringEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/WateringEvent/WateringEventProducer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/data.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/config/KafkaProducerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/config/KafkaProducerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/PlantEventProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/PlantEventProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/PlantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/PlantService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/dto/PlantDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/dto/PlantDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/model/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/model/Plant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plant-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watering-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/controller/WateringController.java" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/controller/WateringController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/service/WateringService.java" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/service/WateringService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watering-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,43 +64,53 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.auth-service [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.auth-service [compile].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.AuthServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.DiscoveryServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.GatewayServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.PlantServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.WateringServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.auth-service [clean].executor": "Run",
+    "Maven.auth-service [compile].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.AuthServiceApplication.executor": "Run",
+    "Spring Boot.DiscoveryServiceApplication.executor": "Run",
+    "Spring Boot.GatewayServiceApplication.executor": "Run",
+    "Spring Boot.PlantServiceApplication.executor": "Run",
+    "Spring Boot.WateringServiceApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/jarma/Desktop/plantas-micro/watering-service",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jarma\Desktop\plantas-micro\watering-service" />
+      <recent name="C:\Users\jarma\Desktop\plantas-micro\plant-service" />
+      <recent name="C:\Users\jarma\Desktop\plantas-micro\gateway-service" />
+      <recent name="C:\Users\jarma\Desktop\plantas-micro\discovery-service" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jarma\Desktop\plantas-micro\watering-service\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.generations.plantservice.dto" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -158,9 +179,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.PlantServiceApplication" />
         <item itemvalue="Spring Boot.GatewayServiceApplication" />
         <item itemvalue="Spring Boot.AuthServiceApplication" />
-        <item itemvalue="Spring Boot.PlantServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +217,7 @@
       <workItem from="1758621107611" duration="14666000" />
       <workItem from="1758706799491" duration="8215000" />
       <workItem from="1758745048697" duration="1585000" />
-      <workItem from="1758792214529" duration="2831000" />
+      <workItem from="1758792214529" duration="18957000" />
     </task>
     <task id="LOCAL-00001" summary="auth-service">
       <option name="closed" value="true" />
@@ -262,7 +283,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758652478108</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Kafa works on plant service">
+      <option name="closed" value="true" />
+      <created>1758798084154</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1758798084154</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,6 +306,7 @@
     <MESSAGE value="fix feign and conecction plant service to watering and add docker compose" />
     <MESSAGE value="docker compose and postgresql database" />
     <MESSAGE value="Kafka y postgre sql" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kafka y postgre sql" />
+    <MESSAGE value="Kafa works on plant service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kafa works on plant service" />
   </component>
 </project>

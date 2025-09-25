@@ -4,6 +4,8 @@ package org.generations.plantservice.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -22,7 +24,7 @@ public class Plant {
     private String notes;
 
     @Column(name="last_watered")
-    private String lastWatered;
+    private LocalDateTime lastWatered;
     @Column(name="owner_username")
     private String ownerUsername;
 }

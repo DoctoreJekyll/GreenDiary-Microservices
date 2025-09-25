@@ -31,9 +31,9 @@ public class WateringController {
     public ResponseEntity<WateringDTO> createWateringForPlant(
             @PathVariable("plantId") int plantId,
             @RequestBody WateringDTO dto,
-            @AuthenticationPrincipal Jwt jwt) { // <- ¡Añade esto!
+            @AuthenticationPrincipal Jwt jwt) {
         dto.setPlantId(plantId);
-        dto.setOwnerUsername(jwt.getSubject()); // <- ¡Añade esto para obtener el username!
+        dto.setOwnerUsername(jwt.getSubject());
 
         WateringDTO wateringSaved = wateringService.save(dto);
         return ResponseEntity.created(URI.create("/api/watering/" + wateringSaved.getId()))

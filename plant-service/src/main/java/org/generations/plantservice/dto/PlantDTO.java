@@ -2,6 +2,8 @@ package org.generations.plantservice.dto;
 
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,7 +17,7 @@ public class PlantDTO {
     private String location;
     private String notes;
 
-    private String lastWatered;
+    private LocalDateTime lastWatered;
     private String ownerUsername;
 
 }
