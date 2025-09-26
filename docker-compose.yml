@@ -1,4 +1,6 @@
+
 services:
+  # Bases de datos para cada microservicio
   plant-db:
     image: postgres:15
     container_name: plant-db
@@ -7,7 +9,7 @@ services:
       POSTGRES_USER: plantuser
       POSTGRES_PASSWORD: plantpass
     ports:
-      - "5433:5432"
+      - "5433:5432"       # expone Postgres en localhost:5433
     networks:
       - plantnet
 
@@ -19,7 +21,7 @@ services:
       POSTGRES_USER: wateringuser
       POSTGRES_PASSWORD: wateringpass
     ports:
-      - "5434:5432"
+      - "5434:5432"       # expone Postgres en localhost:5434
     networks:
       - plantnet
 
@@ -31,10 +33,11 @@ services:
       POSTGRES_USER: authuser
       POSTGRES_PASSWORD: authpass
     ports:
-      - "5435:5432"
+      - "5435:5432"       # expone Postgres en localhost:5435
     networks:
       - plantnet
 
+  # Infraestructura de Kafka
   zookeeper:
     image: confluentinc/cp-zookeeper:7.5.0
     container_name: zookeeper
@@ -52,7 +55,7 @@ services:
     depends_on:
       - zookeeper
     ports:
-      - "9092:9092"
+      - "9092:9092"       # Kafka accesible en localhost:9092
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
@@ -64,12 +67,36 @@ services:
     networks:
       - plantnet
 
+  # Servicio de descubrimiento
+  eureka:
+    build: ./discovery-service        # carpeta con tu Dockerfile del eureka-server
+    container_name: discovery
+    ports:
+      - "8761:8761"                # consola de Eureka en localhost:8761
+    networks:
+      - plantnet
+
+  # API Gateway
+  gateway:
+    build: ./gateway-service       # carpeta con tu Dockerfile del gateway
+    container_name: gateway
+    depends_on:
+      - eureka
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka
+    ports:
+      - "8080:8080"                # Gateway accesible en localhost:8080
+    networks:
+      - plantnet
+
+  # Microservicios
   plant-service:
     build: ./plant-service
     container_name: plant-service
     depends_on:
       - plant-db
       - kafka
+      - eureka
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://plant-db:5432/plantdb
       SPRING_DATASOURCE_USERNAME: plantuser
@@ -81,14 +108,13 @@ services:
     networks:
       - plantnet
 
-
-
   watering-service:
     build: ./watering-service
     container_name: watering-service
     depends_on:
       - watering-db
       - kafka
+      - eureka
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://watering-db:5432/wateringdb
       SPRING_DATASOURCE_USERNAME: wateringuser
@@ -100,13 +126,13 @@ services:
     networks:
       - plantnet
 
-
   auth-service:
     build: ./auth-service
     container_name: auth-service
     depends_on:
       - auth-db
       - kafka
+      - eureka
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://auth-db:5432/authdb
       SPRING_DATASOURCE_USERNAME: authuser
@@ -114,10 +140,9 @@ services:
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka
     ports:
-      - "8082:8082"
+      - "8084:8084"
     networks:
       - plantnet
-
 
 networks:
   plantnet:
