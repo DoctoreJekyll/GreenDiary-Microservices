@@ -35,12 +35,7 @@ jobs:
 
       - name: Run tests for service ${{ matrix.service }}
         working-directory: ./${{ matrix.service }}
-        run: |
-          if [ -f mvnw ]; then
-            ./mvnw -B clean verify
-          else
-            mvn -B -f pom.xml clean verify
-          fi
+        run: mvn -B -f pom.xml clean verify
 
   build-and-push:
     needs: test
