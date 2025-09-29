@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="test ci" />
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="fix ci">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -202,7 +205,7 @@
       <workItem from="1758792214529" duration="19330000" />
       <workItem from="1758879122337" duration="1692000" />
       <workItem from="1758881275113" duration="4895000" />
-      <workItem from="1759141630276" duration="5139000" />
+      <workItem from="1759141630276" duration="5668000" />
     </task>
     <task id="LOCAL-00001" summary="auth-service">
       <option name="closed" value="true" />
@@ -356,7 +359,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759157168299</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="fix ci">
+      <option name="closed" value="true" />
+      <created>1759157450537</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1759157450537</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,8 +388,8 @@
     <MESSAGE value="readme.md" />
     <MESSAGE value="ci github archive" />
     <MESSAGE value="test readme for ci" />
-    <MESSAGE value="fix ci" />
     <MESSAGE value="test ci" />
-    <option name="LAST_COMMIT_MESSAGE" value="test ci" />
+    <MESSAGE value="fix ci" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix ci" />
   </component>
 </project>
