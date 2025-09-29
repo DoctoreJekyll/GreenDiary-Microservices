@@ -10,11 +10,10 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  # 1. JOB NUEVO: Construye e instala common-lib
+  # Este job se ejecuta una vez y garantiza que la librería esté en el repositorio local (y en el caché).
+  build-common-lib:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        service: [ "discovery-service", "gateway-service", "plant-service", "watering-service", "auth-service" ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -29,21 +28,50 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.m2/repository
+          # La clave se mantiene igual para reusar el caché si el pom.xml no cambia
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-m2-
-            
 
-      - name: Build and install common-lib
+      - name: Build and install common-lib artifact
         working-directory: ./common-lib
-        run: mvn -B -f pom.xml clean verify
+        # Usamos 'install' para colocar el JAR en el repositorio local (~/.m2/repository)
+        # Esto lo hace accesible para los siguientes jobs (usando el caché)
+        run: mvn -B -f pom.xml clean install
+
+  test:
+    needs: build-common-lib # ⬅️ Asegura que common-lib esté instalada antes de empezar
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service: [ "discovery-service", "gateway-service", "plant-service", "watering-service", "auth-service" ]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      # Se necesita el caché de Maven para restaurar common-lib desde el job anterior
+      - name: Restore Maven repo cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-m2-
+      
 
       - name: Run tests for service ${{ matrix.service }}
         working-directory: ./${{ matrix.service }}
         run: mvn -B -f pom.xml clean verify
 
+
   build-and-push:
-    needs: test
+    needs: test # ⬅️ Solo se ejecuta si todos los tests han pasado
     runs-on: ubuntu-latest
     strategy:
       matrix:
