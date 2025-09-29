@@ -32,14 +32,15 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-m2-
+            
 
       - name: Build and install common-lib
         working-directory: ./common-lib
-        run: mvn -B clean install
+        run: mvn -B -f pom.xml clean verify
 
       - name: Run tests for service ${{ matrix.service }}
         working-directory: ./${{ matrix.service }}
-        run: mvn -B clean verify
+        run: mvn -B -f pom.xml clean verify
 
   build-and-push:
     needs: test
