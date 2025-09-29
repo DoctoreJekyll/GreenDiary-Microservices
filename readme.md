@@ -324,3 +324,6 @@ Después de crear riego deberías ver en el consumidor (o en consola kafka-conso
 * `Couldn't resolve server kafka:9092` desde host: tu app dentro de docker debe usar `kafka:9092`. Desde anfitrión (host) usa `localhost:9092`.
 
 ---
+# 14) Añadido archivo ci.yml
+
+---

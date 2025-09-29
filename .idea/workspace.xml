@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="readme.md">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="ci github archive">
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +204,7 @@
       <workItem from="1758792214529" duration="19330000" />
       <workItem from="1758879122337" duration="1692000" />
       <workItem from="1758881275113" duration="4895000" />
-      <workItem from="1759141630276" duration="3922000" />
+      <workItem from="1759141630276" duration="4013000" />
     </task>
     <task id="LOCAL-00001" summary="auth-service">
       <option name="closed" value="true" />
@@ -303,7 +302,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759145956634</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="ci github archive">
+      <option name="closed" value="true" />
+      <created>1759155980754</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1759155980754</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,6 +329,7 @@
     <MESSAGE value="docker compose and dockerfiles" />
     <MESSAGE value="docker compose, build jar archive and readme" />
     <MESSAGE value="readme.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme.md" />
+    <MESSAGE value="ci github archive" />
+    <option name="LAST_COMMIT_MESSAGE" value="ci github archive" />
   </component>
 </project>
