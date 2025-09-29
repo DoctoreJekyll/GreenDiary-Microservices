@@ -1,4 +1,4 @@
-name: CI - Build & Push Images (skip tests)
+name: CI - build & push images (skip tests)
 
 on:
   push:
@@ -10,7 +10,6 @@ permissions:
   contents: read
 
 jobs:
-  # 1️⃣ Compila todos los módulos locales para tener common-lib instalado en ~/.m2
   build-local-dependencies:
     runs-on: ubuntu-latest
     steps:
@@ -31,10 +30,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2-
 
-      - name: Install All Local SNAPSHOT dependencies (skip tests)
+      - name: Install all local SNAPSHOTs (skip tests)
         run: mvn -B clean install -DskipTests
 
-  # 2️⃣ Construye y sube imágenes Docker para cada microservicio
   build-and-push:
     needs: build-local-dependencies
     runs-on: ubuntu-latest
@@ -58,14 +56,12 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push image for ${{ matrix.service }}
+      - name: Build & push ${{ matrix.service }} image
         uses: docker/build-push-action@v4
         with:
           context: ./${{ matrix.service }}
           file: ./${{ matrix.service }}/Dockerfile
           push: true
-          tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ matrix.service }}:${{ github.sha }}
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ matrix.service }}:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ matrix.service }}:${{ github.sha }},${{ secrets.DOCKERHUB_USERNAME }}/${{ matrix.service }}:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
