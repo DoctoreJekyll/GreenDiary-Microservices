@@ -33,9 +33,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2-
 
+      - name: Build and install common-lib
+        working-directory: ./common-lib
+        run: mvn -B clean install
+
       - name: Run tests for service ${{ matrix.service }}
         working-directory: ./${{ matrix.service }}
-        run: mvn -B -f pom.xml clean verify
+        run: mvn -B clean verify
 
   build-and-push:
     needs: test
