@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="trying to fix ci 7 without a test">
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="trying to fix ci 8 without a test">
       <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovery-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watering-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +222,7 @@
       <workItem from="1758792214529" duration="19330000" />
       <workItem from="1758879122337" duration="1692000" />
       <workItem from="1758881275113" duration="4895000" />
-      <workItem from="1759141630276" duration="13061000" />
+      <workItem from="1759141630276" duration="13357000" />
     </task>
     <task id="LOCAL-00001" summary="auth-service">
       <option name="closed" value="true" />
@@ -477,14 +472,29 @@
       <option name="project" value="LOCAL" />
       <updated>1759167343396</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="trying to fix ci 8 without a test">
+      <option name="closed" value="true" />
+      <created>1759167884047</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1759167884047</updated>
+    </task>
+    <task id="LOCAL-00033" summary="trying to fix ci 8 without a test">
+      <option name="closed" value="true" />
+      <created>1759167956416</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1759167956416</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="auth-service" />
     <MESSAGE value="auth token on plant service and gateway fix" />
     <MESSAGE value="Auth and plant with owner in plant service" />
     <MESSAGE value="sec in watering and owner dto" />
@@ -509,6 +519,7 @@
     <MESSAGE value="trying to fix ci 5, without test," />
     <MESSAGE value="trying to fix ci 6 without a test" />
     <MESSAGE value="trying to fix ci 7 without a test" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to fix ci 7 without a test" />
+    <MESSAGE value="trying to fix ci 8 without a test" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to fix ci 8 without a test" />
   </component>
 </project>
