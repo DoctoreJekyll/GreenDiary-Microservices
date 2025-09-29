@@ -1,17 +1,21 @@
-name: CI - build & push images (skip tests)
+name: CI - Build & Push Docker Images (skip tests)
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
 permissions:
   contents: read
 
 jobs:
-  build-local-dependencies:
+  build-and-push:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service: [ "discovery-service", "gateway-service", "plant-service", "watering-service", "auth-service" ]
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -30,20 +34,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2-
 
-      - name: Install all local SNAPSHOTs (skip tests)
-        run: mvn -B clean install -DskipTests
+      - name: Build all JARs (skip tests)
+        run: mvn -B clean package -DskipTests
 
-  build-and-push:
-    needs: build-local-dependencies
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        service: [ "discovery-service", "gateway-service", "plant-service", "watering-service", "auth-service" ]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up QEMU (for buildx)
+      - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
 
       - name: Set up Docker Buildx
@@ -56,7 +50,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build & push ${{ matrix.service }} image
+      - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
           context: ./${{ matrix.service }}
