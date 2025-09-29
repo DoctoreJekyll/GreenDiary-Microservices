@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  # 1. JOB CORREGIDO: Construye e instala el POM padre (plantas-micro) y todos los módulos locales.
+  # 1. JOB MODIFICADO: Instala TODO localmente Y sube common-lib como Artefacto (Doble Seguridad)
   build-local-dependencies:
     runs-on: ubuntu-latest
     steps:
@@ -24,7 +24,6 @@ jobs:
           java-version: '21'
 
       - name: Cache Maven dependencies
-        # Este paso restaura/guarda el repositorio .m2 para los jobs de 'test'
         uses: actions/cache@v4
         with:
           path: ~/.m2/repository
@@ -32,16 +31,23 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2-
 
-      # ➡️ PASO CLAVE: Instalar TODOS los artefactos locales.
-      # Ejecutar 'mvn clean install' en la raíz instala el POM padre (plantas-micro:pom)
-      # y common-lib:jar en el repositorio local (caché).
-      - name: Install All Local SNAPSHOT dependencies (plantas-micro, common-lib)
-        # Saltamos los tests aquí, ya que el job 'test' los ejecutará.
+      # ➡️ PASO CLAVE 1: Instalar TODOS los artefactos locales (incluyendo el POM padre y common-lib)
+      # Esto resuelve la dependencia 'plantas-micro:pom' y pone 'common-lib:jar' en el caché.
+      - name: Install All Local SNAPSHOT dependencies
         run: mvn -B clean install -DskipTests=true
 
-  # 2. JOB CORREGIDO: Ejecuta tests, confiando en el caché de Maven del job anterior.
+      # ➡️ PASO CLAVE 2: Subir el JAR de common-lib como un artefacto (Respaldo garantizado para el job 'test').
+      # Aunque esté en el caché, lo subimos por si el job 'test' falla al restaurar.
+      - name: Upload common-lib artifact for matrix jobs
+        uses: actions/upload-artifact@v4
+        with:
+          name: common-lib-jar
+          path: ./common-lib/target/*.jar
+          retention-days: 1
+
+  # 2. JOB MODIFICADO: Descarga el Artefacto e instala la librería común (Garantía de éxito)
   test:
-    needs: build-local-dependencies # ⬅️ Depende del nuevo job de instalación
+    needs: build-local-dependencies
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -56,8 +62,8 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-      # ➡️ PASO CLAVE: Restaurar el caché. Contiene plantas-micro:pom y common-lib:jar.
-      - name: Restore Maven repo cache
+      # ➡️ PASO CLAVE 3: Restaurar el Caché (Debe contener plantas-micro:pom del job anterior)
+      - name: Restore Maven repo cache (for parent POM and dependencies)
         uses: actions/cache@v4
         with:
           path: ~/.m2/repository
@@ -65,11 +71,34 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2-
 
-      # Se eliminan los 3 pasos de descarga/instalación manual que ya no son necesarios.
+      # ➡️ PASO CLAVE 4: Descargar el JAR de common-lib (El respaldo explícito)
+      - name: Download common-lib artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: common-lib-jar
+          path: common-lib-downloads/
+
+      # ➡️ PASO CLAVE 5: Instalar el JAR descargado forzosamente en el repositorio local.
+      - name: Install common-lib into local Maven repo (Guaranteed fix)
+        run: |
+          # Identifica el JAR descargado.
+          JAR_PATH=$(find common-lib-downloads -name "common-lib-*.jar" | head -n 1)
+          if [ -z "$JAR_PATH" ]; then
+            echo "Error: common-lib JAR not found in downloads!"
+            exit 1
+          fi
+          # Instala el JAR manualmente.
+          mvn install:install-file \
+            -Dfile=$JAR_PATH \
+            -DgroupId=org.generations \
+            -DartifactId=common-lib \
+            -Dversion=0.0.1-SNAPSHOT \
+            -Dpackaging=jar \
+            -B
 
       - name: Run tests for service ${{ matrix.service }}
         working-directory: ./${{ matrix.service }}
-        # Ahora el servicio encontrará 'plantas-micro' y 'common-lib' en su repositorio local.
+        # Ahora tanto el POM padre como common-lib están garantizados en el .m2
         run: mvn -B -f pom.xml clean verify
 
   # 3. JOB SIN CAMBIOS: Construye y empuja
