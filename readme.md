@@ -141,7 +141,7 @@ environment:
   EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
 ```
 
-En `application.yml` de cada servicio deja una propiedad por defecto pero permite override con env vars:
+En `application.yml` de cada servicio deja una propiedad por defecto, pero permite override con env vars:
 
 ```yaml
 spring:
@@ -251,7 +251,7 @@ public class PlantEventProducer {
   private final KafkaTemplate<String, Object> kafka;
   public PlantEventProducer(KafkaTemplate<String, Object> kafka) { this.kafka = kafka; }
   public void send(String topic, Object event) {
-    kafka.send(topic, event).addCallback(...);
+    kafka.send(topic, event).addCallback();
   }
 }
 ```
