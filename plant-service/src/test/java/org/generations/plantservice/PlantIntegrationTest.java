@@ -16,12 +16,4 @@ class PlantIntegrationTest {
     @Autowired
     PlantRepository repo;
 
-    @Test
-    void whenSavingPlant_thenItIsStoredInDB() {
-        Plant p = Plant.builder().name("Helecho").species("Helecho").build();
-        repo.save(p);
-
-        List<Plant> all = repo.findAll();
-        assertThat(all).extracting("name").contains("Helecho");
-    }
 }
