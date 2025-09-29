@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="trying to fix ci 6 without a test">
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="trying to fix ci 7 without a test">
       <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/Dockerfile" afterDir="false" />
@@ -227,7 +227,7 @@
       <workItem from="1758792214529" duration="19330000" />
       <workItem from="1758879122337" duration="1692000" />
       <workItem from="1758881275113" duration="4895000" />
-      <workItem from="1759141630276" duration="12544000" />
+      <workItem from="1759141630276" duration="13061000" />
     </task>
     <task id="LOCAL-00001" summary="auth-service">
       <option name="closed" value="true" />
@@ -469,7 +469,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759167053674</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="trying to fix ci 7 without a test">
+      <option name="closed" value="true" />
+      <created>1759167343396</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1759167343396</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,6 +508,7 @@
     <MESSAGE value="trying to fix ci 4, without test, new dockerfiles" />
     <MESSAGE value="trying to fix ci 5, without test," />
     <MESSAGE value="trying to fix ci 6 without a test" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to fix ci 6 without a test" />
+    <MESSAGE value="trying to fix ci 7 without a test" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to fix ci 7 without a test" />
   </component>
 </project>
