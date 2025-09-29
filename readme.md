@@ -47,7 +47,7 @@ Client -> Gateway (8080) -> (via Eureka) -> Plant (8081) / Watering (8082) / Aut
 
 # 3) Tecnologías
 
-* Java 17, Spring Boot 3.x
+* Java 21, Spring Boot 3.x
 * Spring Cloud (Feign, Gateway, Eureka)
 * Spring Security (JWT)
 * Spring Kafka
@@ -82,7 +82,7 @@ Client -> Gateway (8080) -> (via Eureka) -> Plant (8081) / Watering (8082) / Aut
 
 # 5) Requisitos previos (local sin Docker)
 
-* Java 17 y Maven (si quieres compilar jars antes de docker)
+* Java 21 y Maven (si quieres compilar jars antes de docker)
 * Docker Desktop (o Docker Engine) + Docker Compose
 
 ---
