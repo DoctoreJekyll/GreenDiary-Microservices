@@ -10,8 +10,8 @@ permissions:
   contents: read
 
 jobs:
-  # 1. JOB MODIFICADO: Construye, instala Y sube el common-lib como Artefacto
-  build-common-lib:
+  # 1. JOB CORREGIDO: Construye e instala el POM padre (plantas-micro) y todos los módulos locales.
+  build-local-dependencies:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -23,7 +23,8 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-      - name: Cache Maven dependencies (optional, for speed)
+      - name: Cache Maven dependencies
+        # Este paso restaura/guarda el repositorio .m2 para los jobs de 'test'
         uses: actions/cache@v4
         with:
           path: ~/.m2/repository
@@ -31,23 +32,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2-
 
-      # ➡️ PASO CLAVE 1: Construir el JAR (usando verify para incluir tests)
-      - name: Package common-lib artifact (Verify)
-        working-directory: ./common-lib
-        # Se usa 'verify' en lugar de 'package' para ejecutar cualquier test en la librería
-        run: mvn -B -f pom.xml clean verify
+      # ➡️ PASO CLAVE: Instalar TODOS los artefactos locales.
+      # Ejecutar 'mvn clean install' en la raíz instala el POM padre (plantas-micro:pom)
+      # y common-lib:jar en el repositorio local (caché).
+      - name: Install All Local SNAPSHOT dependencies (plantas-micro, common-lib)
+        # Saltamos los tests aquí, ya que el job 'test' los ejecutará.
+        run: mvn -B clean install -DskipTests=true
 
-      # ➡️ PASO CLAVE 2: Subir el JAR generado como un artefacto de GitHub.
-      - name: Upload common-lib artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: common-lib-jar
-          path: ./common-lib/target/*.jar
-          retention-days: 1
-
-  # 2. JOB MODIFICADO: Descarga el Artefacto e instala la librería común
+  # 2. JOB CORREGIDO: Ejecuta tests, confiando en el caché de Maven del job anterior.
   test:
-    needs: build-common-lib
+    needs: build-local-dependencies # ⬅️ Depende del nuevo job de instalación
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -62,7 +56,8 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-      - name: Cache Maven repo (for other dependencies)
+      # ➡️ PASO CLAVE: Restaurar el caché. Contiene plantas-micro:pom y common-lib:jar.
+      - name: Restore Maven repo cache
         uses: actions/cache@v4
         with:
           path: ~/.m2/repository
@@ -70,31 +65,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2-
 
-      # ➡️ PASO CLAVE 3: Descargar el JAR del job anterior.
-      - name: Download common-lib artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: common-lib-jar
-          path: common-lib-downloads/
-
-
-      - name: Install common-lib into local Maven repo
-        run: |
-          JAR_PATH=$(find common-lib-downloads -name "common-lib-*.jar" | head -n 1)
-          if [ -z "$JAR_PATH" ]; then
-            echo "Error: common-lib JAR not found!"
-            exit 1
-          fi
-          mvn install:install-file \
-            -Dfile=$JAR_PATH \
-            -DgroupId=org.generations \
-            -DartifactId=common-lib \
-            -Dversion=0.0.1-SNAPSHOT \
-            -Dpackaging=jar \
-            -B
+      # Se eliminan los 3 pasos de descarga/instalación manual que ya no son necesarios.
 
       - name: Run tests for service ${{ matrix.service }}
         working-directory: ./${{ matrix.service }}
+        # Ahora el servicio encontrará 'plantas-micro' y 'common-lib' en su repositorio local.
         run: mvn -B -f pom.xml clean verify
 
   # 3. JOB SIN CAMBIOS: Construye y empuja
