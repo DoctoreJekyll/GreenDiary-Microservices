@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="trying to fix ci 8 without a test">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="trying to fix ci 9 without a test">
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/org/generations/gatewayservice/config/GatewayCorsConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/org/generations/authservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/org/generations/authservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/org/generations/authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/org/generations/authservice/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/org/generations/gatewayservice/GatewayServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/org/generations/gatewayservice/GatewayServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/controller/PlantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/controller/PlantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/controller/WateringController.java" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/controller/WateringController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,39 +54,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.PlantControllerTest.executor": "Run",
-    "Maven.auth-service [clean].executor": "Run",
-    "Maven.auth-service [compile].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.AuthServiceApplication.executor": "Run",
-    "Spring Boot.DiscoveryServiceApplication.executor": "Run",
-    "Spring Boot.GatewayServiceApplication.executor": "Run",
-    "Spring Boot.PlantServiceApplication.executor": "Run",
-    "Spring Boot.WateringServiceApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/jarma/Desktop/plantas-micro/watering-service",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.PlantControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.auth-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.auth-service [compile].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AuthServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.DiscoveryServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GatewayServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.PlantServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.WateringServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jarma/Desktop/plantas-micro/watering-service&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -180,10 +185,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PlantControllerTest" />
-        <item itemvalue="Spring Boot.GatewayServiceApplication" />
         <item itemvalue="Spring Boot.PlantServiceApplication" />
         <item itemvalue="Spring Boot.AuthServiceApplication" />
+        <item itemvalue="Spring Boot.GatewayServiceApplication" />
+        <item itemvalue="JUnit.PlantControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -222,7 +227,10 @@
       <workItem from="1758792214529" duration="19330000" />
       <workItem from="1758879122337" duration="1692000" />
       <workItem from="1758881275113" duration="4895000" />
-      <workItem from="1759141630276" duration="13959000" />
+      <workItem from="1759141630276" duration="14312000" />
+      <workItem from="1759225925291" duration="2126000" />
+      <workItem from="1759307985700" duration="6096000" />
+      <workItem from="1759395647821" duration="8969000" />
     </task>
     <task id="LOCAL-00001" summary="auth-service">
       <option name="closed" value="true" />
@@ -496,14 +504,21 @@
       <option name="project" value="LOCAL" />
       <updated>1759168164569</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="trying to fix ci 9 without a test">
+      <option name="closed" value="true" />
+      <created>1759168793190</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1759168793190</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="auth token on plant service and gateway fix" />
     <MESSAGE value="Auth and plant with owner in plant service" />
     <MESSAGE value="sec in watering and owner dto" />
     <MESSAGE value="trying to connect watering with plant service" />
@@ -528,6 +543,7 @@
     <MESSAGE value="trying to fix ci 6 without a test" />
     <MESSAGE value="trying to fix ci 7 without a test" />
     <MESSAGE value="trying to fix ci 8 without a test" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to fix ci 8 without a test" />
+    <MESSAGE value="trying to fix ci 9 without a test" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to fix ci 9 without a test" />
   </component>
 </project>
