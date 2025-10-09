@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="tryng to connect to angular front">
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="Cors config">
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/org/generations/authservice/config/JwtAuthenticationFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/org/generations/authservice/config/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/org/generations/authservice/config/JwtUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/org/generations/authservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/org/generations/authservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/org/generations/gatewayservice/GatewayServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/org/generations/gatewayservice/GatewayServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/org/generations/gatewayservice/config/GatewayCorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/org/generations/gatewayservice/config/GatewayCorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/controller/PlantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/controller/PlantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/controller/WateringController.java" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/java/org/generations/wateringservice/controller/WateringController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,8 +184,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.PlantServiceApplication" />
-        <item itemvalue="Spring Boot.AuthServiceApplication" />
         <item itemvalue="Spring Boot.GatewayServiceApplication" />
+        <item itemvalue="Spring Boot.AuthServiceApplication" />
         <item itemvalue="JUnit.PlantControllerTest" />
       </list>
     </recent_temporary>
@@ -231,7 +229,10 @@
       <workItem from="1759225925291" duration="2126000" />
       <workItem from="1759307985700" duration="6096000" />
       <workItem from="1759395647821" duration="14236000" />
-      <workItem from="1759742722431" duration="1792000" />
+      <workItem from="1759742722431" duration="5764000" />
+      <workItem from="1759831640933" duration="4430000" />
+      <workItem from="1759931668668" duration="1159000" />
+      <workItem from="1760001690333" duration="929000" />
     </task>
     <task id="LOCAL-00001" summary="auth-service">
       <option name="closed" value="true" />
@@ -521,14 +522,21 @@
       <option name="project" value="LOCAL" />
       <updated>1759409475648</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Cors config">
+      <option name="closed" value="true" />
+      <created>1759747301726</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1759747301726</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="sec in watering and owner dto" />
     <MESSAGE value="trying to connect watering with plant service" />
     <MESSAGE value="fix feign and conecction plant service to watering and add docker compose" />
     <MESSAGE value="docker compose and postgresql database" />
@@ -553,6 +561,7 @@
     <MESSAGE value="trying to fix ci 8 without a test" />
     <MESSAGE value="trying to fix ci 9 without a test" />
     <MESSAGE value="tryng to connect to angular front" />
-    <option name="LAST_COMMIT_MESSAGE" value="tryng to connect to angular front" />
+    <MESSAGE value="Cors config" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cors config" />
   </component>
 </project>
