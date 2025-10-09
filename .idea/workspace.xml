@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="Pom independiente auth fix">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="test pom common">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +229,7 @@
       <workItem from="1759742722431" duration="5764000" />
       <workItem from="1759831640933" duration="4430000" />
       <workItem from="1759931668668" duration="1159000" />
-      <workItem from="1760001690333" duration="4106000" />
+      <workItem from="1760001690333" duration="4769000" />
     </task>
     <task id="LOCAL-00001" summary="auth-service">
       <option name="closed" value="true" />
@@ -558,14 +559,21 @@
       <option name="project" value="LOCAL" />
       <updated>1760006021189</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="test pom common">
+      <option name="closed" value="true" />
+      <created>1760006198726</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1760006198726</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="docker compose and postgresql database" />
     <MESSAGE value="Kafka y postgre sql" />
     <MESSAGE value="Kafa works on plant service" />
     <MESSAGE value="docker compose and dockerfiles" />
@@ -590,6 +598,7 @@
     <MESSAGE value="Cors config" />
     <MESSAGE value="Pom independiente auth" />
     <MESSAGE value="Pom independiente auth fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pom independiente auth fix" />
+    <MESSAGE value="test pom common" />
+    <option name="LAST_COMMIT_MESSAGE" value="test pom common" />
   </component>
 </project>
