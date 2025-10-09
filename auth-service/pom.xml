@@ -149,7 +149,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>org.generations.authservice.AuthServiceApplication</mainClass>
+                </configuration>
             </plugin>
+
         </plugins>
     </build>
 
