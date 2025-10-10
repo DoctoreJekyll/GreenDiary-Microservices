@@ -20,9 +20,9 @@ spring:
       data-locations: classpath:data.sql
 
   datasource:
-    url: jdbc:postgresql://localhost:5435/authdb
-    username: authuser
-    password: authpass
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5435/authdb}
+    username: ${SPRING_DATASOURCE_USERNAME:authuser}
+    password: ${SPRING_DATASOURCE_PASSWORD:authpass}
 
 jwt:
   secret: ${JWT_SECRET:AjXVvMvzieSBc95uWqPOS8/1K2+K9GHiErd+dmwWQY8r+0n+YN7hIHCOXTliRK4x}
@@ -32,4 +32,4 @@ jwt:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://localhost:8761/eureka/}

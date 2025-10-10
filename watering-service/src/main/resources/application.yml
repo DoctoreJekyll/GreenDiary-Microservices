@@ -27,9 +27,9 @@ spring:
 
 
   datasource:
-    url: jdbc:postgresql://localhost:5434/wateringdb
-    username: wateringuser
-    password: wateringpass
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5434/wateringdb}
+    username: ${SPRING_DATASOURCE_USERNAME:wateringuser}
+    password: ${SPRING_DATASOURCE_PASSWORD:wateringpass}
 
 
   kafka:
@@ -42,7 +42,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://localhost:8761/eureka/}
 
 
 

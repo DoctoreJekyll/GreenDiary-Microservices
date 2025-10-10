@@ -27,9 +27,9 @@ spring:
       data-locations: classpath:data.sql
 
   datasource:
-    url: jdbc:postgresql://localhost:5433/plantdb
-    username: plantuser
-    password: plantpass
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/plantdb}
+    username: ${SPRING_DATASOURCE_USERNAME:plantuser}
+    password: ${SPRING_DATASOURCE_PASSWORD:plantpass}
 
   kafka:
     bootstrap-servers: localhost:9092
@@ -44,7 +44,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://localhost:8761/eureka/}
 
 
 jwt:
