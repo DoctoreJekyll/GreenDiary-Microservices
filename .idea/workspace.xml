@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="environment var and dockerfile fix from eureka">
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="fix eureka dockerfile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovery-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +231,7 @@
       <workItem from="1759931668668" duration="1159000" />
       <workItem from="1760001690333" duration="7507000" />
       <workItem from="1760089277816" duration="4588000" />
-      <workItem from="1760350637748" duration="2452000" />
+      <workItem from="1760350637748" duration="4442000" />
     </task>
     <task id="LOCAL-00001" summary="auth-service">
       <option name="closed" value="true" />
@@ -609,14 +609,21 @@
       <option name="project" value="LOCAL" />
       <updated>1760353823464</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="fix eureka dockerfile">
+      <option name="closed" value="true" />
+      <created>1760354674057</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1760354674057</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="readme.md" />
     <MESSAGE value="ci github archive" />
     <MESSAGE value="test readme for ci" />
     <MESSAGE value="test ci" />
@@ -641,6 +648,7 @@
     <MESSAGE value="Fix pom with goals" />
     <MESSAGE value="environment var" />
     <MESSAGE value="environment var and dockerfile fix from eureka" />
-    <option name="LAST_COMMIT_MESSAGE" value="environment var and dockerfile fix from eureka" />
+    <MESSAGE value="fix eureka dockerfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix eureka dockerfile" />
   </component>
 </project>
