@@ -20,52 +20,73 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
 
-      - name: Build all modules
-        run: mvn clean install -DskipTests
-
       - name: Log in to DockerHub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      # ---- AUTH-SERVICE ----
+      - name: Build auth-service JAR
+        working-directory: ./auth-service
+        run: mvn clean package -DskipTests
 
       - name: Build and push auth-service
         uses: docker/build-push-action@v4
         with:
-          context: .
+          context: ./auth-service
           file: ./auth-service/Dockerfile
           push: true
           tags: joseajierro/auth-service:latest
 
+      # ---- GATEWAY-SERVICE ----
+      - name: Build gateway-service JAR
+        working-directory: ./gateway-service
+        run: mvn clean package -DskipTests
+
       - name: Build and push gateway-service
         uses: docker/build-push-action@v4
         with:
-          context: .
+          context: ./gateway-service
           file: ./gateway-service/Dockerfile
           push: true
           tags: joseajierro/gateway-service:latest
 
+      # ---- DISCOVERY-SERVICE ----
+      - name: Build discovery-service JAR
+        working-directory: ./discovery-service
+        run: mvn clean package -DskipTests
+
       - name: Build and push discovery-service
         uses: docker/build-push-action@v4
         with:
-          context: .
+          context: ./discovery-service
           file: ./discovery-service/Dockerfile
           push: true
           tags: joseajierro/discovery-service:latest
 
+      # ---- PLANT-SERVICE ----
+      - name: Build plant-service JAR
+        working-directory: ./plant-service
+        run: mvn clean package -DskipTests
+
       - name: Build and push plant-service
         uses: docker/build-push-action@v4
         with:
-          context: .
+          context: ./plant-service
           file: ./plant-service/Dockerfile
           push: true
           tags: joseajierro/plant-service:latest
 
+      # ---- WATERING-SERVICE ----
+      - name: Build watering-service JAR
+        working-directory: ./watering-service
+        run: mvn clean package -DskipTests
+
       - name: Build and push watering-service
         uses: docker/build-push-action@v4
         with:
-          context: .
+          context: ./watering-service
           file: ./watering-service/Dockerfile
           push: true
           tags: joseajierro/watering-service:latest
