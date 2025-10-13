@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="fix auth pom">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="fix ci.yml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,15 +231,7 @@
       <workItem from="1759931668668" duration="1159000" />
       <workItem from="1760001690333" duration="7507000" />
       <workItem from="1760089277816" duration="4588000" />
-      <workItem from="1760350637748" duration="8197000" />
-    </task>
-    <task id="LOCAL-00003" summary="Auth and plant with owner in plant service">
-      <option name="closed" value="true" />
-      <created>1758191558743</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1758191558743</updated>
+      <workItem from="1760350637748" duration="8820000" />
     </task>
     <task id="LOCAL-00004" summary="sec in watering and owner dto">
       <option name="closed" value="true" />
@@ -625,14 +617,21 @@
       <option name="project" value="LOCAL" />
       <updated>1760363963403</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="fix ci.yml">
+      <option name="closed" value="true" />
+      <created>1760364512830</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1760364512830</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test ci" />
     <MESSAGE value="fix ci" />
     <MESSAGE value="clean test" />
     <MESSAGE value="trying to fix ci" />
@@ -657,6 +656,7 @@
     <MESSAGE value="fix eureka dockerfile" />
     <MESSAGE value="fix auth dockerfile" />
     <MESSAGE value="fix auth pom" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix auth pom" />
+    <MESSAGE value="fix ci.yml" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix ci.yml" />
   </component>
 </project>
