@@ -1,9 +1,9 @@
 server:
-  port: 8080   #  El gateway expone TODO en este puerto.
+  port: 8080   #  El gateway expone en este puerto.
 
-logging:
-  level:
-    org.springframework.cloud.gateway: DEBUG
+#logging:
+#  level:
+#    org.springframework.cloud.gateway: DEBUG
 
 
 spring:
