@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="environment var">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watering-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="environment var and dockerfile fix from eureka" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -233,7 +228,7 @@
       <workItem from="1759931668668" duration="1159000" />
       <workItem from="1760001690333" duration="7507000" />
       <workItem from="1760089277816" duration="4588000" />
-      <workItem from="1760350637748" duration="637000" />
+      <workItem from="1760350637748" duration="965000" />
     </task>
     <task id="LOCAL-00001" summary="auth-service">
       <option name="closed" value="true" />
@@ -595,14 +590,21 @@
       <option name="project" value="LOCAL" />
       <updated>1760093292280</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="environment var and dockerfile fix from eureka">
+      <option name="closed" value="true" />
+      <created>1760353082643</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1760353082643</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="docker compose, build jar archive and readme" />
     <MESSAGE value="readme.md" />
     <MESSAGE value="ci github archive" />
     <MESSAGE value="test readme for ci" />
@@ -627,6 +629,7 @@
     <MESSAGE value="Fix Dockerfile" />
     <MESSAGE value="Fix pom with goals" />
     <MESSAGE value="environment var" />
-    <option name="LAST_COMMIT_MESSAGE" value="environment var" />
+    <MESSAGE value="environment var and dockerfile fix from eureka" />
+    <option name="LAST_COMMIT_MESSAGE" value="environment var and dockerfile fix from eureka" />
   </component>
 </project>
