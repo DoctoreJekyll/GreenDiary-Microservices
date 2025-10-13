@@ -1,28 +1,29 @@
-# --- Etapa 1: BUILD (Compilación) ---
-# Usamos una imagen con JDK completo para compilar
+# --- Etapa 1: BUILD (Compilación Multi-Módulo) ---
 FROM eclipse-temurin:21-jdk-alpine AS build
 WORKDIR /app
 
-# 1. Copia los archivos de la RAÍZ (pom padre y wrapper)
-# Esto es necesario para que el mvnw funcione en el contexto multi-módulo
+# 1. Copia los archivos de la RAÍZ (necesario para Maven Wrapper)
 COPY pom.xml .
 COPY .mvn .mvn
 COPY mvnw .
 
-# 2. Copia la carpeta del módulo y sus dependencias locales (como common-lib)
+# 2. Copia los módulos necesarios (Auth y Common-Lib)
 COPY auth-service auth-service
 COPY common-lib common-lib
-# Repite COPY para cualquier otra dependencia interna (si aplica)
 
-# 3. COMPILACIÓN: Dirige Maven para que compile SOLO el módulo de autenticación
+# 3. Compilación: Dirige Maven para compilar SOLO el módulo de autenticación
 RUN ./mvnw clean package -DskipTests -f auth-service/pom.xml
 
 # --- Etapa 2: RUN (Ejecución) ---
+# Usamos JRE para un contenedor más ligero
 FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 
-# 4. CORRECCIÓN CLAVE: Copia el JAR desde la ruta correcta (dentro de la carpeta del módulo)
+# 4. Copia el JAR desde la ubicación CORRECTA (dentro de la carpeta del módulo)
 COPY --from=build /app/auth-service/target/auth-service-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8084
+
+# 5. Comando de inicio (CMD)
+# Usamos CMD para forzar el inicio y evitar la detección incorrecta de Railway
 CMD ["java", "-jar", "app.jar"]

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="fix eureka dockerfile">
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="fix auth dockerfile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/Dockerfile" afterDir="false" />
     </list>
@@ -231,7 +231,7 @@
       <workItem from="1759931668668" duration="1159000" />
       <workItem from="1760001690333" duration="7507000" />
       <workItem from="1760089277816" duration="4588000" />
-      <workItem from="1760350637748" duration="4442000" />
+      <workItem from="1760350637748" duration="5683000" />
     </task>
     <task id="LOCAL-00001" summary="auth-service">
       <option name="closed" value="true" />
@@ -617,14 +617,21 @@
       <option name="project" value="LOCAL" />
       <updated>1760354674057</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="fix auth dockerfile">
+      <option name="closed" value="true" />
+      <created>1760359860040</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1760359860040</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ci github archive" />
     <MESSAGE value="test readme for ci" />
     <MESSAGE value="test ci" />
     <MESSAGE value="fix ci" />
@@ -649,6 +656,7 @@
     <MESSAGE value="environment var" />
     <MESSAGE value="environment var and dockerfile fix from eureka" />
     <MESSAGE value="fix eureka dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix eureka dockerfile" />
+    <MESSAGE value="fix auth dockerfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix auth dockerfile" />
   </component>
 </project>
