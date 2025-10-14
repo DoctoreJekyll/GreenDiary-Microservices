@@ -8,7 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="watering-service" />
-        <module name="common-lib" />
         <module name="discovery-service" />
         <module name="gateway-service" />
         <module name="plant-service" />
@@ -25,5 +24,8 @@
         <module name="auth-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="common-lib" target="21" />
+    </bytecodeTargetLevel>
   </component>
 </project>

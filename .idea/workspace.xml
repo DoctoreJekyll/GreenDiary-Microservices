@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="Dockerfile fixes/clean">
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="Fix pom with goals">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plant-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watering-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +59,6 @@
     &quot;Maven.auth-service [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.auth-service [compile].executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;PowerShell.build-all.ps1.executor&quot;: &quot;Run&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
@@ -109,7 +113,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="PowerShell.build-all.ps1">
+  <component name="RunManager" selected="JUnit.PlantControllerTest">
     <configuration name="PlantControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="plant-service" />
       <extension name="coverage">
@@ -124,10 +128,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="build-all.ps1" type="PowerShellRunType" factoryName="PowerShell" temporary="true" scriptUrl="$PROJECT_DIR$/build-all.ps1" executablePath="$PROJECT_DIR$/../../../../WINDOWS/System32/WindowsPowerShell/v1.0/powershell.exe">
-      <envs />
-      <method v="2" />
     </configuration>
     <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="auth-service" />
@@ -184,7 +184,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PowerShell.build-all.ps1" />
         <item itemvalue="Spring Boot.AuthServiceApplication" />
         <item itemvalue="Spring Boot.PlantServiceApplication" />
         <item itemvalue="Spring Boot.GatewayServiceApplication" />
@@ -235,8 +234,55 @@
       <workItem from="1759831640933" duration="4430000" />
       <workItem from="1759931668668" duration="1159000" />
       <workItem from="1760001690333" duration="7507000" />
-      <workItem from="1760089277816" duration="4588000" />
-      <workItem from="1760350637748" duration="10280000" />
+      <workItem from="1760089277816" duration="2171000" />
+    </task>
+    <task id="LOCAL-00001" summary="auth-service">
+      <option name="closed" value="true" />
+      <created>1757953647855</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1757953647855</updated>
+    </task>
+    <task id="LOCAL-00002" summary="auth token on plant service and gateway fix">
+      <option name="closed" value="true" />
+      <created>1758035658715</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1758035658715</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Auth and plant with owner in plant service">
+      <option name="closed" value="true" />
+      <created>1758191558743</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1758191558743</updated>
+    </task>
+    <task id="LOCAL-00004" summary="sec in watering and owner dto">
+      <option name="closed" value="true" />
+      <created>1758195078087</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1758195078087</updated>
+    </task>
+    <task id="LOCAL-00005" summary="trying to connect watering with plant service">
+      <option name="closed" value="true" />
+      <created>1758292364454</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1758292364454</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix feign and conecction plant service to watering and add docker compose">
+      <option name="closed" value="true" />
+      <created>1758563105139</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1758563105139</updated>
     </task>
     <task id="LOCAL-00007" summary="docker compose and postgresql database">
       <option name="closed" value="true" />
@@ -542,101 +588,21 @@
       <option name="project" value="LOCAL" />
       <updated>1760014524392</updated>
     </task>
-    <task id="LOCAL-00045" summary="environment var">
-      <option name="closed" value="true" />
-      <created>1760093292280</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1760093292280</updated>
-    </task>
-    <task id="LOCAL-00046" summary="environment var and dockerfile fix from eureka">
-      <option name="closed" value="true" />
-      <created>1760353082643</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1760353082643</updated>
-    </task>
-    <task id="LOCAL-00047" summary="environment var and dockerfile fix from eureka">
-      <option name="closed" value="true" />
-      <created>1760353823464</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1760353823464</updated>
-    </task>
-    <task id="LOCAL-00048" summary="fix eureka dockerfile">
-      <option name="closed" value="true" />
-      <created>1760354674057</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1760354674057</updated>
-    </task>
-    <task id="LOCAL-00049" summary="fix auth dockerfile">
-      <option name="closed" value="true" />
-      <created>1760359860040</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1760359860040</updated>
-    </task>
-    <task id="LOCAL-00050" summary="fix auth dockerfile">
-      <option name="closed" value="true" />
-      <created>1760361146089</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1760361146089</updated>
-    </task>
-    <task id="LOCAL-00051" summary="fix auth pom">
-      <option name="closed" value="true" />
-      <created>1760363963403</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1760363963403</updated>
-    </task>
-    <task id="LOCAL-00052" summary="fix ci.yml">
-      <option name="closed" value="true" />
-      <created>1760364512830</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1760364512830</updated>
-    </task>
-    <task id="LOCAL-00053" summary="dockerfile try to fix">
-      <option name="closed" value="true" />
-      <created>1760365138917</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1760365138917</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Dockerfile fixes/clean">
-      <option name="closed" value="true" />
-      <created>1760365651128</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1760365651128</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Dockerfile fixes/clean">
-      <option name="closed" value="true" />
-      <created>1760366545946</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1760366545946</updated>
-    </task>
-    <option name="localTasksCounter" value="56" />
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="docker compose and dockerfiles" />
+    <MESSAGE value="docker compose, build jar archive and readme" />
+    <MESSAGE value="readme.md" />
+    <MESSAGE value="ci github archive" />
+    <MESSAGE value="test readme for ci" />
+    <MESSAGE value="test ci" />
+    <MESSAGE value="fix ci" />
+    <MESSAGE value="clean test" />
     <MESSAGE value="trying to fix ci" />
     <MESSAGE value="trying to fix ci 2" />
     <MESSAGE value="trying to fix ci 3, without test" />
@@ -654,14 +620,6 @@
     <MESSAGE value="test pom common" />
     <MESSAGE value="Fix Dockerfile" />
     <MESSAGE value="Fix pom with goals" />
-    <MESSAGE value="environment var" />
-    <MESSAGE value="environment var and dockerfile fix from eureka" />
-    <MESSAGE value="fix eureka dockerfile" />
-    <MESSAGE value="fix auth dockerfile" />
-    <MESSAGE value="fix auth pom" />
-    <MESSAGE value="fix ci.yml" />
-    <MESSAGE value="dockerfile try to fix" />
-    <MESSAGE value="Dockerfile fixes/clean" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dockerfile fixes/clean" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix pom with goals" />
   </component>
 </project>
