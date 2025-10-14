@@ -2,16 +2,17 @@
 FROM eclipse-temurin:21-jdk-alpine AS build
 WORKDIR /app
 
-# Copiamos el Maven Wrapper y pom.xml
+# Copiamos Maven Wrapper y POM
 COPY mvnw .
-COPY pom.xml .
 COPY .mvn/ .mvn/
+COPY pom.xml .
+COPY src ./src
 
-# Instalamos bash para Alpine
+# Instala bash (Alpine)
 RUN apk add --no-cache bash
 
-# Copiamos el resto del código
-COPY src ./src
+# Hacemos mvnw ejecutable
+RUN chmod +x mvnw
 
 # Compilamos el JAR
 RUN ./mvnw clean package -DskipTests
