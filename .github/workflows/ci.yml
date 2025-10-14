@@ -60,7 +60,7 @@ jobs:
       - name: Build and push discovery-service
         uses: docker/build-push-action@v4
         with:
-          context: ./discovery-service
+          context: .
           file: ./discovery-service/Dockerfile
           push: true
           tags: joseajierro/discovery-service:latest
