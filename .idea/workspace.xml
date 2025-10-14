@@ -4,25 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="Revert &quot;environment var&quot;&#10;&#10;This reverts commit a3ec86324f31b388ebd1f519d3c224fee89dbeae.&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="back to global error not personal">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-lib/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-lib/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-lib/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-lib/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-lib/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-lib/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-lib/src/main/java/org/generations/commonlib/dto/ApiError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-lib/src/main/java/org/generations/commonlib/exception/ResourceNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-lib/src/main/java/org/generations/commonlib/handler/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/controller/PlantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/controller/PlantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/errors/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/PlantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/src/main/java/org/generations/plantservice/service/PlantService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watering-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -614,14 +598,21 @@
       <option name="project" value="LOCAL" />
       <updated>1760436550772</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="back to global error not personal">
+      <option name="closed" value="true" />
+      <created>1760437482001</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1760437482001</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="docker compose and dockerfiles" />
     <MESSAGE value="docker compose, build jar archive and readme" />
     <MESSAGE value="readme.md" />
     <MESSAGE value="ci github archive" />
@@ -646,6 +637,7 @@
     <MESSAGE value="test pom common" />
     <MESSAGE value="Fix Dockerfile" />
     <MESSAGE value="Fix pom with goals" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix pom with goals" />
+    <MESSAGE value="back to global error not personal" />
+    <option name="LAST_COMMIT_MESSAGE" value="back to global error not personal" />
   </component>
 </project>
