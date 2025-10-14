@@ -2,22 +2,26 @@
 FROM eclipse-temurin:21-jdk-alpine AS build
 WORKDIR /app
 
-# Copiamos solo los pom.xml primero para aprovechar cache
+# Copiamos el Maven Wrapper y pom.xml
+COPY mvnw .
 COPY pom.xml .
-COPY discovery-service/pom.xml ./discovery-service/pom.xml
-# (si hay parent pom, copialo también)
+COPY .mvn/ .mvn/
+
+# Instalamos bash para Alpine
 RUN apk add --no-cache bash
-RUN ./mvnw dependency:resolve
 
 # Copiamos el resto del código
-COPY . .
+COPY src ./src
 
-# Compilamos y generamos el JAR
+# Compilamos el JAR
 RUN ./mvnw clean package -DskipTests
 
 # --- Etapa 2: run ---
 FROM eclipse-temurin:21-jdk-alpine
 WORKDIR /app
-COPY --from=build /app/discovery-service/target/discovery-service-0.0.1-SNAPSHOT.jar app.jar
+
+# Copiamos el JAR generado
+COPY --from=build /app/target/discovery-service-0.0.1-SNAPSHOT.jar app.jar
+
 EXPOSE 8761
 ENTRYPOINT ["java", "-jar", "app.jar"]
