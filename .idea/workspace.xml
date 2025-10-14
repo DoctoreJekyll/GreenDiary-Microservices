@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="railway test 5">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovery-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plant-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watering-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,14 +241,6 @@
       <workItem from="1759931668668" duration="1159000" />
       <workItem from="1760001690333" duration="7507000" />
       <workItem from="1760089277816" duration="2171000" />
-    </task>
-    <task id="LOCAL-00011" summary="docker compose, build jar archive and readme">
-      <option name="closed" value="true" />
-      <created>1758901555931</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1758901555931</updated>
     </task>
     <task id="LOCAL-00012" summary="readme.md">
       <option name="closed" value="true" />
@@ -630,7 +626,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760450832893</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="railway test 5">
+      <option name="closed" value="true" />
+      <created>1760453636565</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1760453636565</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

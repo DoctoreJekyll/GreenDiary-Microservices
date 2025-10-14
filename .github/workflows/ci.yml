@@ -30,7 +30,7 @@ jobs:
       - name: Build and push auth-service
         uses: docker/build-push-action@v4
         with:
-          context: ./auth-service
+          context: .
           file: ./auth-service/Dockerfile
           push: true
           tags: joseajierro/auth-service:latest
@@ -39,7 +39,7 @@ jobs:
       - name: Build and push gateway-service
         uses: docker/build-push-action@v4
         with:
-          context: ./gateway-service
+          context: .
           file: ./gateway-service/Dockerfile
           push: true
           tags: joseajierro/gateway-service:latest
@@ -57,7 +57,7 @@ jobs:
       - name: Build and push plant-service
         uses: docker/build-push-action@v4
         with:
-          context: ./plant-service
+          context: .
           file: ./plant-service/Dockerfile
           push: true
           tags: joseajierro/plant-service:latest
@@ -66,7 +66,7 @@ jobs:
       - name: Build and push watering-service
         uses: docker/build-push-action@v4
         with:
-          context: ./watering-service
+          context: .
           file: ./watering-service/Dockerfile
           push: true
           tags: joseajierro/watering-service:latest
