@@ -7,7 +7,6 @@
     <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="fix docker compose and application yml from auth">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discovery-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovery-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,14 +237,6 @@
       <workItem from="1759931668668" duration="1159000" />
       <workItem from="1760001690333" duration="7507000" />
       <workItem from="1760089277816" duration="2171000" />
-    </task>
-    <task id="LOCAL-00002" summary="auth token on plant service and gateway fix">
-      <option name="closed" value="true" />
-      <created>1758035658715</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1758035658715</updated>
     </task>
     <task id="LOCAL-00003" summary="Auth and plant with owner in plant service">
       <option name="closed" value="true" />
@@ -631,7 +622,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760441487306</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="fix docker compose and application yml from auth">
+      <option name="closed" value="true" />
+      <created>1760441788033</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1760441788033</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
