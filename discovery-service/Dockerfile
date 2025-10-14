@@ -2,21 +2,13 @@
 FROM eclipse-temurin:21-jdk-alpine AS build
 WORKDIR /app
 
-# Instalamos bash y Maven
+# Instalamos bash, Maven y git
 RUN apk add --no-cache bash maven git
 
-# Copiamos el parent pom y todos los módulos
-COPY pom.xml .
-COPY discovery-service/pom.xml ./discovery-service/pom.xml
-COPY gateway-service/pom.xml ./gateway-service/pom.xml
-COPY plant-service/pom.xml ./plant-service/pom.xml
-COPY watering-service/pom.xml ./watering-service/pom.xml
-COPY auth-service/pom.xml ./auth-service/pom.xml
+# Copiamos todo el proyecto (parent POM y módulos)
+COPY . .
 
-# Copiamos los src solo de discovery-service (las dependencias de otros módulos se resolverán por parent)
-COPY discovery-service/src ./discovery-service/src
-
-# Compilamos discovery-service y lo que dependa de él
+# Compilamos solo discovery-service y sus dependencias
 RUN mvn clean package -DskipTests -pl discovery-service -am
 
 # --- Etapa 2: run ---

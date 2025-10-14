@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="railway test 3">
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="railway test 4">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discovery-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -236,14 +238,6 @@
       <workItem from="1759931668668" duration="1159000" />
       <workItem from="1760001690333" duration="7507000" />
       <workItem from="1760089277816" duration="2171000" />
-    </task>
-    <task id="LOCAL-00009" summary="Kafa works on plant service">
-      <option name="closed" value="true" />
-      <created>1758798084154</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1758798084154</updated>
     </task>
     <task id="LOCAL-00010" summary="docker compose and dockerfiles">
       <option name="closed" value="true" />
@@ -629,14 +623,21 @@
       <option name="project" value="LOCAL" />
       <updated>1760449708628</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="railway test 4">
+      <option name="closed" value="true" />
+      <created>1760449938120</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1760449938120</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix ci" />
     <MESSAGE value="clean test" />
     <MESSAGE value="trying to fix ci" />
     <MESSAGE value="trying to fix ci 2" />
@@ -661,6 +662,7 @@
     <MESSAGE value="railway test" />
     <MESSAGE value="railway test 2" />
     <MESSAGE value="railway test 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="railway test 3" />
+    <MESSAGE value="railway test 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="railway test 4" />
   </component>
 </project>

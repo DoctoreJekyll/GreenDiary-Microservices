@@ -27,10 +27,6 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       # ---- AUTH-SERVICE ----
-      - name: Build auth-service JAR
-        working-directory: ./auth-service
-        run: mvn clean package -DskipTests
-
       - name: Build and push auth-service
         uses: docker/build-push-action@v4
         with:
@@ -40,10 +36,6 @@ jobs:
           tags: joseajierro/auth-service:latest
 
       # ---- GATEWAY-SERVICE ----
-      - name: Build gateway-service JAR
-        working-directory: ./gateway-service
-        run: mvn clean package -DskipTests
-
       - name: Build and push gateway-service
         uses: docker/build-push-action@v4
         with:
@@ -53,10 +45,6 @@ jobs:
           tags: joseajierro/gateway-service:latest
 
       # ---- DISCOVERY-SERVICE ----
-      - name: Build discovery-service JAR
-        working-directory: ./discovery-service
-        run: mvn clean package -DskipTests
-
       - name: Build and push discovery-service
         uses: docker/build-push-action@v4
         with:
@@ -66,10 +54,6 @@ jobs:
           tags: joseajierro/discovery-service:latest
 
       # ---- PLANT-SERVICE ----
-      - name: Build plant-service JAR
-        working-directory: ./plant-service
-        run: mvn clean package -DskipTests
-
       - name: Build and push plant-service
         uses: docker/build-push-action@v4
         with:
@@ -79,10 +63,6 @@ jobs:
           tags: joseajierro/plant-service:latest
 
       # ---- WATERING-SERVICE ----
-      - name: Build watering-service JAR
-        working-directory: ./watering-service
-        run: mvn clean package -DskipTests
-
       - name: Build and push watering-service
         uses: docker/build-push-action@v4
         with:
