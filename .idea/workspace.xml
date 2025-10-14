@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="back to global error not personal">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="Test docker files 2 phases">
       <change beforePath="$PROJECT_DIR$/discovery-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -606,14 +605,21 @@
       <option name="project" value="LOCAL" />
       <updated>1760437482001</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Test docker files 2 phases">
+      <option name="closed" value="true" />
+      <created>1760438825278</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1760438825278</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="docker compose, build jar archive and readme" />
     <MESSAGE value="readme.md" />
     <MESSAGE value="ci github archive" />
     <MESSAGE value="test readme for ci" />
@@ -638,6 +644,7 @@
     <MESSAGE value="Fix Dockerfile" />
     <MESSAGE value="Fix pom with goals" />
     <MESSAGE value="back to global error not personal" />
-    <option name="LAST_COMMIT_MESSAGE" value="back to global error not personal" />
+    <MESSAGE value="Test docker files 2 phases" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test docker files 2 phases" />
   </component>
 </project>
