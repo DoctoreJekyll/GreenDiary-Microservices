@@ -238,14 +238,6 @@
       <workItem from="1760001690333" duration="7507000" />
       <workItem from="1760089277816" duration="2171000" />
     </task>
-    <task id="LOCAL-00004" summary="sec in watering and owner dto">
-      <option name="closed" value="true" />
-      <created>1758195078087</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1758195078087</updated>
-    </task>
     <task id="LOCAL-00005" summary="trying to connect watering with plant service">
       <option name="closed" value="true" />
       <created>1758292364454</created>
@@ -630,7 +622,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760445643099</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="railway test">
+      <option name="closed" value="true" />
+      <created>1760447326945</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1760447326945</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
