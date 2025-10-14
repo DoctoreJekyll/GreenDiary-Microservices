@@ -1,6 +1,7 @@
 package org.generations.plantservice.controller;
 
-import org.generations.commonlib.exception.ResourceNotFoundException;
+
+import org.apache.kafka.common.errors.ResourceNotFoundException;
 import org.generations.plantservice.dto.PlantDTO;
 import org.generations.plantservice.dto.PlantWithWateringDTO;
 import org.generations.plantservice.dto.WateringDTO;

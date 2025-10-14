@@ -1,9 +1,8 @@
 package org.generations.plantservice.service;
 
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import org.generations.commonlib.exception.ResourceNotFoundException;
+import org.apache.kafka.common.errors.ResourceNotFoundException;
 import org.generations.plantservice.dto.PlantDTO;
 import org.generations.plantservice.dto.PlantWithWateringDTO;
 import org.generations.plantservice.dto.WateringDTO;
