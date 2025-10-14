@@ -140,7 +140,7 @@ services:
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka
     ports:
-      - "8084:8084"
+      - "8083:8083"
     networks:
       - plantnet
 
