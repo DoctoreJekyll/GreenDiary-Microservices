@@ -1,4 +1,3 @@
-
 services:
   # Bases de datos para cada microservicio
   plant-db:
@@ -9,7 +8,7 @@ services:
       POSTGRES_USER: plantuser
       POSTGRES_PASSWORD: plantpass
     ports:
-      - "5433:5432"       # expone Postgres en localhost:5433
+      - "5433:5432"
     networks:
       - plantnet
 
@@ -21,7 +20,7 @@ services:
       POSTGRES_USER: wateringuser
       POSTGRES_PASSWORD: wateringpass
     ports:
-      - "5434:5432"       # expone Postgres en localhost:5434
+      - "5434:5432"
     networks:
       - plantnet
 
@@ -33,7 +32,7 @@ services:
       POSTGRES_USER: authuser
       POSTGRES_PASSWORD: authpass
     ports:
-      - "5435:5432"       # expone Postgres en localhost:5435
+      - "5435:5432"
     networks:
       - plantnet
 
@@ -55,43 +54,53 @@ services:
     depends_on:
       - zookeeper
     ports:
-      - "9092:9092"       # Kafka accesible en localhost:9092
+      - "9092:9092"
+      - "29092:29092"
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      # escuchamos en todas las interfaces
-      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
-      # anunciamos a los clientes externos como localhost
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      # Definimos ambos listeners
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,PLAINTEXT_HOST://0.0.0.0:29092
+      # Los anunciamos igual
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
     networks:
       - plantnet
 
-  # Servicio de descubrimiento
+
+  # Servicio de descubrimiento (Eureka)
   eureka:
-    build: ./discovery-service        # carpeta con tu Dockerfile del eureka-server
+    build:
+      context: .
+      dockerfile: ./discovery-service/Dockerfile
     container_name: discovery
     ports:
-      - "8761:8761"                # consola de Eureka en localhost:8761
+      - "8761:8761"
     networks:
       - plantnet
 
   # API Gateway
   gateway:
-    build: ./gateway-service       # carpeta con tu Dockerfile del gateway
+    build:
+      context: .
+      dockerfile: ./gateway-service/Dockerfile
     container_name: gateway
     depends_on:
       - eureka
     environment:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka
     ports:
-      - "8080:8080"                # Gateway accesible en localhost:8080
+      - "8080:8080"
     networks:
       - plantnet
 
-  # Microservicios
+  # Microservicio de plantas
   plant-service:
-    build: ./plant-service
+    build:
+      context: .
+      dockerfile: ./plant-service/Dockerfile
     container_name: plant-service
     depends_on:
       - plant-db
@@ -108,8 +117,11 @@ services:
     networks:
       - plantnet
 
+  # Microservicio de riego
   watering-service:
-    build: ./watering-service
+    build:
+      context: .
+      dockerfile: ./watering-service/Dockerfile
     container_name: watering-service
     depends_on:
       - watering-db
@@ -126,8 +138,11 @@ services:
     networks:
       - plantnet
 
+  # Microservicio de autenticación
   auth-service:
-    build: ./auth-service
+    build:
+      context: .
+      dockerfile: ./auth-service/Dockerfile
     container_name: auth-service
     depends_on:
       - auth-db

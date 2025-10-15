@@ -3,8 +3,8 @@ FROM eclipse-temurin:21-jdk-alpine AS build
 WORKDIR /app
 RUN apk add --no-cache bash maven git
 
-COPY . .
-RUN mvn clean package -DskipTests -pl watering-service -am
+COPY .. .
+RUN mvn -f pom.xml clean package -DskipTests -pl watering-service -am
 
 # --- Etapa runtime ---
 FROM eclipse-temurin:21-jdk-alpine
