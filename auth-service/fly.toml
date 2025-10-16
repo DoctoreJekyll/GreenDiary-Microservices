@@ -1,15 +1,15 @@
-# fly.toml app configuration file generated for auth-service-joseajierro on 2025-10-16T11:52:43+02:00
+# fly.toml app configuration file generated for auth-service-joseajierro-0 on 2025-10-16T14:07:34+02:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'auth-service-joseajierro'
+app = 'auth-service-joseajierro-0'
 primary_region = 'cdg'
 
 [build]
 
 [http_service]
-  internal_port = 8083
+  internal_port = 8084
   force_https = true
   auto_stop_machines = 'stop'
   auto_start_machines = true

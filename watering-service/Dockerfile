@@ -5,15 +5,11 @@ WORKDIR /app
 # Instalar herramientas necesarias
 RUN apk add --no-cache bash maven git
 
-# Copiamos solo los poms primero para cacheo más eficiente
-COPY ../pom.xml ./pom.xml
-COPY ../watering-service/pom.xml ./watering-service/pom.xml
-
-# Copiamos el resto del código
-COPY .. .
+# Copiamos el proyecto (como contexto es la raíz, podemos usar rutas relativas internas)
+COPY . .
 
 # Compilamos solo el módulo auth-service
-RUN mvn -f pom.xml clean package -DskipTests -pl watering-service -am
+RUN mvn clean package -DskipTests -pl watering-service -am
 
 # ---- Runtime stage ----
 FROM eclipse-temurin:21-jre-alpine
@@ -22,5 +18,5 @@ WORKDIR /app
 # Copiamos el jar compilado desde la etapa anterior
 COPY --from=build /app/watering-service/target/watering-service-0.0.1-SNAPSHOT.jar app.jar
 
-EXPOSE 8082
+EXPOSE 8084
 ENTRYPOINT ["java", "-jar", "app.jar"]

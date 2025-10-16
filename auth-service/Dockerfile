@@ -5,15 +5,11 @@ WORKDIR /app
 # Instalar herramientas necesarias
 RUN apk add --no-cache bash maven git
 
-# Copiamos solo los poms primero para cacheo más eficiente
-COPY ../pom.xml ./pom.xml
-COPY ../auth-service/pom.xml ./auth-service/pom.xml
-
-# Copiamos el resto del código
-COPY .. .
+# Copiamos el proyecto (como contexto es la raíz, podemos usar rutas relativas internas)
+COPY . .
 
 # Compilamos solo el módulo auth-service
-RUN mvn -f pom.xml clean package -DskipTests -pl auth-service -am
+RUN mvn clean package -DskipTests -pl auth-service -am
 
 # ---- Runtime stage ----
 FROM eclipse-temurin:21-jre-alpine
