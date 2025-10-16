@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="change dockerfile to deploy on fly 2">
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="revert change dockerfile to deploy on fly 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discovery-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/Dockerfile" afterDir="false" />
@@ -235,15 +235,7 @@
       <workItem from="1760089277816" duration="2171000" />
       <workItem from="1760457715710" duration="1776000" />
       <workItem from="1760521079344" duration="11370000" />
-      <workItem from="1760607497048" duration="4030000" />
-    </task>
-    <task id="LOCAL-00018" summary="fix ci">
-      <option name="closed" value="true" />
-      <created>1759156593990</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1759156593990</updated>
+      <workItem from="1760607497048" duration="5365000" />
     </task>
     <task id="LOCAL-00019" summary="test ci">
       <option name="closed" value="true" />
@@ -629,14 +621,21 @@
       <option name="project" value="LOCAL" />
       <updated>1760611903961</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="revert change dockerfile to deploy on fly 2">
+      <option name="closed" value="true" />
+      <created>1760612285473</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1760612285473</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="trying to fix ci 5, without test," />
     <MESSAGE value="trying to fix ci 6 without a test" />
     <MESSAGE value="trying to fix ci 7 without a test" />
     <MESSAGE value="trying to fix ci 8 without a test" />
@@ -661,6 +660,7 @@
     <MESSAGE value="new branch" />
     <MESSAGE value="change dockerfile to deploy on fly" />
     <MESSAGE value="change dockerfile to deploy on fly 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="change dockerfile to deploy on fly 2" />
+    <MESSAGE value="revert change dockerfile to deploy on fly 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="revert change dockerfile to deploy on fly 2" />
   </component>
 </project>

@@ -1,16 +1,26 @@
-# --- Etapa build ---
+# ---- Build stage ----
 FROM eclipse-temurin:21-jdk-alpine AS build
 WORKDIR /app
+
+# Instalar herramientas necesarias
 RUN apk add --no-cache bash maven git
 
-COPY .. .
-RUN mvn -f pom.xml clean package -DskipTests
+# Copiamos solo los poms primero para cacheo más eficiente
+COPY ../pom.xml ./pom.xml
+COPY ../plant-service/pom.xml ./plant-service/pom.xml
 
-# --- Etapa runtime ---
-FROM eclipse-temurin:21-jdk-alpine
+# Copiamos el resto del código
+COPY .. .
+
+# Compilamos solo el módulo auth-service
+RUN mvn -f pom.xml clean package -DskipTests -pl plant-service -am
+
+# ---- Runtime stage ----
+FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
+
+# Copiamos el jar compilado desde la etapa anterior
 COPY --from=build /app/plant-service/target/plant-service-0.0.1-SNAPSHOT.jar app.jar
 
-
 EXPOSE 8081
-ENTRYPOINT ["java","-jar","app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
