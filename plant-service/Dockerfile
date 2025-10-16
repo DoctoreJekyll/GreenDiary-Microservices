@@ -9,8 +9,7 @@ RUN mvn -f pom.xml clean package -DskipTests
 # --- Etapa runtime ---
 FROM eclipse-temurin:21-jdk-alpine
 WORKDIR /app
-
-COPY --from=build /app/target/plant-service-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/plant-service/target/plant-service-0.0.1-SNAPSHOT.jar app.jar
 
 
 EXPOSE 8081
