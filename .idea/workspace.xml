@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment=" change dockerfile to deploy on fly 3">
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment=" change dockerfile to deploy on fly 4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/fly.toml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/fly.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovery-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plant-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watering-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,15 +232,7 @@
       <workItem from="1760089277816" duration="2171000" />
       <workItem from="1760457715710" duration="1776000" />
       <workItem from="1760521079344" duration="11370000" />
-      <workItem from="1760607497048" duration="8166000" />
-    </task>
-    <task id="LOCAL-00020" summary="fix ci">
-      <option name="closed" value="true" />
-      <created>1759157450537</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1759157450537</updated>
+      <workItem from="1760607497048" duration="11940000" />
     </task>
     <task id="LOCAL-00021" summary="fix ci">
       <option name="closed" value="true" />
@@ -630,14 +618,21 @@
       <option name="project" value="LOCAL" />
       <updated>1760613777441</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary=" change dockerfile to deploy on fly 4">
+      <option name="closed" value="true" />
+      <created>1760621410510</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1760621410510</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="trying to fix ci 7 without a test" />
     <MESSAGE value="trying to fix ci 8 without a test" />
     <MESSAGE value="trying to fix ci 9 without a test" />
     <MESSAGE value="tryng to connect to angular front" />
@@ -662,6 +657,7 @@
     <MESSAGE value="change dockerfile to deploy on fly 2" />
     <MESSAGE value="revert change dockerfile to deploy on fly 2" />
     <MESSAGE value=" change dockerfile to deploy on fly 3" />
-    <option name="LAST_COMMIT_MESSAGE" value=" change dockerfile to deploy on fly 3" />
+    <MESSAGE value=" change dockerfile to deploy on fly 4" />
+    <option name="LAST_COMMIT_MESSAGE" value=" change dockerfile to deploy on fly 4" />
   </component>
 </project>

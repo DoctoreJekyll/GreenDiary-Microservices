@@ -20,3 +20,12 @@ COPY --from=build /app/auth-service/target/auth-service-0.0.1-SNAPSHOT.jar app.j
 
 EXPOSE 8084
 ENTRYPOINT ["java", "-jar", "app.jar"]
+
+#Postgres cluster empty-bush-8872 created
+ #  Username:    postgres
+ #  Password:    cw4MSfhIXYkSD7J
+ #  Hostname:    empty-bush-8872.internal
+ #  Flycast:     fdaa:30:c8:0:1::2
+ #  Proxy port:  5432
+ #  Postgres port:  5433
+ #  Connection string: postgres://postgres:cw4MSfhIXYkSD7J@empty-bush-8872.flycast:5432
