@@ -6,7 +6,7 @@ WORKDIR /app
 RUN apk add --no-cache bash maven git
 
 COPY .. .
-RUN mvn -f pom.xml clean package -DskipTests -pl auth-service -am
+RUN mvn -f pom.xml clean package -DskipTests
 
 # --- Etapa runtime ---
 FROM eclipse-temurin:21-jdk-alpine
