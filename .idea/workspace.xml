@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="new branch">
+    <list default="true" id="f573ad86-6415-480f-87a8-d02018e3db7c" name="Changes" comment="change dockerfile to deploy on fly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discovery-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plant-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/plant-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watering-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/watering-service/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,15 +235,7 @@
       <workItem from="1760089277816" duration="2171000" />
       <workItem from="1760457715710" duration="1776000" />
       <workItem from="1760521079344" duration="11370000" />
-      <workItem from="1760607497048" duration="2714000" />
-    </task>
-    <task id="LOCAL-00016" summary="fix ci">
-      <option name="closed" value="true" />
-      <created>1759156200165</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1759156200165</updated>
+      <workItem from="1760607497048" duration="3644000" />
     </task>
     <task id="LOCAL-00017" summary="fix ci">
       <option name="closed" value="true" />
@@ -628,14 +621,21 @@
       <option name="project" value="LOCAL" />
       <updated>1760551307959</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="change dockerfile to deploy on fly">
+      <option name="closed" value="true" />
+      <created>1760610287984</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1760610287984</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="trying to fix ci 3, without test, new dockerfiles" />
     <MESSAGE value="trying to fix ci 4, without test, new dockerfiles" />
     <MESSAGE value="trying to fix ci 5, without test," />
     <MESSAGE value="trying to fix ci 6 without a test" />
@@ -660,6 +660,7 @@
     <MESSAGE value="Try to fix actions" />
     <MESSAGE value="Local deploy config" />
     <MESSAGE value="new branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="new branch" />
+    <MESSAGE value="change dockerfile to deploy on fly" />
+    <option name="LAST_COMMIT_MESSAGE" value="change dockerfile to deploy on fly" />
   </component>
 </project>
